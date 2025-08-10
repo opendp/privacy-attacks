@@ -1,0 +1,19 @@
+URL: https://arxiv.org/abs/2301.10053
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{annamalai2023linear,\n\
+  \  title={A linear reconstruction approach for attribute inference attacks against\
+  \ synthetic data},\n  author={Annamalai, Meenatchi Sundaram Muthu Selva and Gadotti,\
+  \ Andrea and Rocher, Luc},\n  booktitle={Usenix Security},\n  year={2024}\n}"
+Authors: Meenatchi Sundaram Muthu Selva Annamalai, Andrea Gadotti, Luc Rocher
+Title: A linear reconstruction approach for attribute inference attacks against synthetic
+  data
+Short Description: Introduces a new attribute inference attack against synthetic data
+  based on linear reconstruction methods for aggregate statistics, which target all
+  records in the dataset, not only outliers.
+Data Type: Tabular
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Attribute inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: https://github.com/synthetic-society/recon-synth
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

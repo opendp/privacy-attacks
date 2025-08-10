@@ -1,0 +1,22 @@
+URL: https://arxiv.org/abs/2402.10001
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): '@INPROCEEDINGS{ElMrini2024a,  author
+  = {{El Mrini}, Abdellah and {Cyffers}, Edwige and {Bellet}, Aur{\''e}lien},  title
+  = {{P}rivacy {A}ttacks in {D}ecentralized {L}earning},  booktitle = {{ICML}},  year
+  = {2024}}
+
+  '
+Authors: Abdellah El Mrini, Edwige Cyffers, Aurélien Bellet
+Title: Privacy Attacks in Decentralized Learning
+Short Description: The paper designs data reconstruction attacks against Decentralized
+  SGD (where nodes in a communication graph alternate between local gradient steps
+  and averaging steps with their neighbors). They show it is possible for a small
+  subset of (honest but curious) attacker nodes to reconstruct the data from even
+  distant nodes in the graph.
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: https://github.com/AbdellahElmrini/decAttack
+Comments: .nan
+Submitter (your name, affiliation): Aurélien Bellet, Inria

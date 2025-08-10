@@ -1,0 +1,18 @@
+URL: https://arxiv.org/pdf/2311.09355
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{Cilloni2023PrivacyTI,\n\
+  \  title={Privacy Threats in Stable Diffusion Models},\n  author={Thomas Cilloni\
+  \ and Charles Fleming and Charles Walter},\n  journal={ArXiv},\n  year={2023},\n\
+  \  volume={abs/2311.09355},\n  url={https://api.semanticscholar.org/CorpusID:265220927}\n\
+  }"
+Authors: Thomas Cilloni, Charles Fleming, Charles Walter
+Title: Privacy Threats in Stable Diffusion Models
+Short Description: Introduces a black box MIA on stable diffusion models by querying
+  the model.
+Data Type: Image
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Applications
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Saraswathy RV,  HP Inc.

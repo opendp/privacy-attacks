@@ -1,0 +1,26 @@
+URL: https://arxiv.org/abs/2402.07841
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@misc{duan2024membership,\n\
+  \      title={Do Membership Inference Attacks Work on Large Language Models?}, \n\
+  \      author={Michael Duan and Anshuman Suri and Niloofar Mireshghallah and Sewon\
+  \ Min and Weijia Shi and Luke Zettlemoyer and Yulia Tsvetkov and Yejin Choi and\
+  \ David Evans and Hannaneh Hajishirzi},\n      year={2024},\n      eprint={2402.07841},\n\
+  \      archivePrefix={arXiv},\n      primaryClass={id='cs.CL' full_name='Computation\
+  \ and Language' is_active=True alt_name='cmp-lg' in_archive='cs' is_general=False\
+  \ description='Covers natural language processing. Roughly includes material in\
+  \ ACM Subject Class I.2.7. Note that work on artificial languages (programming languages,\
+  \ logics, formal systems) that does not explicitly address natural-language issues\
+  \ broadly construed (natural-language processing, computational linguistics, speech,\
+  \ text retrieval, etc.) is not appropriate for this area.'}\n}"
+Authors: Michael Duan, Anshuman Suri, Niloofar Mireshghallah, Sewon Min, Weijia Shi,
+  Luke Zettlemoyer, Yulia Tsvetkov, Yejin Choi, David Evans, Hannaneh Hajishirzi
+Title: Do Membership Inference Attacks Work on Large Language Models?
+Short Description: Examining MIA attacks on LLM, proposing a github repo with set
+  of standard attacks
+Data Type: Text
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: https://github.com/iamgroot42/mimir
+Comments: .nan
+Submitter (your name, affiliation): Daniil Filienko, University of Washington

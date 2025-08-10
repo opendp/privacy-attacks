@@ -1,0 +1,45 @@
+URL: https://link.springer.com/chapter/10.1007/978-3-540-85174-5_26
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): '@InProceedings{10.1007/978-3-540-85174-5_26,
+
+  author="Dwork, Cynthia
+
+  and Yekhanin, Sergey",
+
+  editor="Wagner, David",
+
+  title="New Efficient Attacks on Statistical Disclosure Control Mechanisms",
+
+  booktitle="Advances in Cryptology -- CRYPTO 2008",
+
+  year="2008",
+
+  publisher="Springer Berlin Heidelberg",
+
+  address="Berlin, Heidelberg",
+
+  pages="469--480",
+
+  abstract="The goal of a statistical database is to provide statistics about a population
+  while simultaneously protecting the privacy of the individual records in the database.
+  The tension between privacy and usability of statistical databases has attracted
+  much attention in statistics, theoretical computer science, security, and database
+  communities in recent years. A line of research initiated by Dinur and Nissim investigates
+  for a particular type of queries, lower bounds on the distortion needed in order
+  to prevent gross violations of privacy. The first result in the current paper simplifies
+  and sharpens the Dinur and Nissim result.",
+
+  isbn="978-3-540-85174-5"
+
+  }'
+Authors: Dwork, Cynthia, Yekhanin, Sergey
+Title: New Efficient Attacks on Statistical Disclosure Control Mechanisms
+Short Description: Simplifies and sharpens Dinur-Nissim results on reconstruction
+  and provides a new attack with fixed number fo queries for each bit revealed.
+Data Type: Tabular
+Type of Release: Linear-Queries
+Threat Model --- Attacker Objective: Information Leakage
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Theoretical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Saraswathy RV,  HP Inc.

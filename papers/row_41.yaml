@@ -1,0 +1,18 @@
+URL: https://dl.acm.org/doi/abs/10.1145/3592800
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{usynin2023beyond,\n\
+  \  title={Beyond gradients: Exploiting adversarial priors in model inversion attacks},\n\
+  \  author={Usynin, Dmitrii and Rueckert, Daniel and Kaissis, Georgios},\n  journal={ACM\
+  \ Transactions on Privacy and Security},\n  volume={26},\n  number={3},\n  pages={1--30},\n\
+  \  year={2023},\n  publisher={ACM New York, NY}\n}"
+Authors: Dmitrii Usynin, Daniel Rueckert, Georgios Kaissis
+Title: 'Beyond Gradients: Exploiting Adversarial Priors in Model Inversion Attacks'
+Short Description: More successful model inversion using HbC adversary with the knowledge
+  of context and style of the training data
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Dmitrii Usynin, TUM/Imperial College London

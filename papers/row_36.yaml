@@ -1,0 +1,20 @@
+URL: https://arxiv.org/abs/2201.12675
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{fowl2022decepticons,\n\
+  \  title={Decepticons: Corrupted transformers breach privacy in federated learning\
+  \ for language models},\n  author={Fowl, Liam and Geiping, Jonas and Reich, Steven\
+  \ and Wen, Yuxin and Czaja, Wojtek and Goldblum, Micah and Goldstein, Tom},\n  journal={arXiv\
+  \ preprint arXiv:2201.12675},\n  year={2022}\n}"
+Authors: Liam Fowl, Jonas Geiping, Steven Reich, Yuxin Wen, Wojtek Czaja, Micah Goldblum,
+  Tom Goldstein
+Title: 'Decepticons: Corrupted Transformers Breach Privacy in Federated Learning for
+  Language Models'
+Short Description: Model inversion attacks using a malicious attacker in transformer-based
+  FL settings
+Data Type: Text
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: 'https://github.com/JonasGeiping/breaching '
+Comments: .nan
+Submitter (your name, affiliation): Dmitrii Usynin, TUM/Imperial College London

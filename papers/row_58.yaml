@@ -1,0 +1,21 @@
+URL: https://www.usenix.org/system/files/sec20summer_salem_prepub.pdf
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{salem2020updates,\n\
+  \  title={Updates-leak: Data set inference and reconstruction attacks in online\
+  \ learning},\n  author={Salem, Ahmed Mohamed Gamal and Bhattacharyya, Apratim and\
+  \ Backes, Michael and Fritz, Mario and Zhang, Yang},\n  booktitle={USENIX Security},\n\
+  \  year={2020},\n}"
+Authors: Ahmed Salem, Apratim Bhattacharya, Michael Backes, Mario Fritz, Yang Zhang
+Title: 'Updates-leak: Data set inference and reconstruction attacks in online learning'
+Short Description: Investigate whether the change in the output of a black-box ML
+  model before and after being updated can leak information of the dataset used to
+  perform the update, namely the updating set. Proposes four attacks following an
+  encoder-decoder formulation, which allows inferring diverse information of the updating
+  set.
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

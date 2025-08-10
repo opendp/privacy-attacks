@@ -1,0 +1,24 @@
+URL: https://arxiv.org/abs/2311.17035
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{nasr2023scalable,\n\
+  \  title={Scalable extraction of training data from (production) language models},\n\
+  \  author={Nasr, Milad and Carlini, Nicholas and Hayase, Jonathan and Jagielski,\
+  \ Matthew and Cooper, A Feder and Ippolito, Daphne and Choquette-Choo, Christopher\
+  \ A and Wallace, Eric and Tram{\\`e}r, Florian and Lee, Katherine},\n  journal={arXiv:2311.17035},\n\
+  \  year={2023}\n}"
+Authors: Milad Nasr, Nicholas Carlini, Jonathan Hayase, Matthew Jagielski, A. Feder
+  Cooper, Daphne Ippolito, Christopher A. Choquette-Choo, Eric Wallace, Florian Tramèr,
+  Katherine Lee
+Title: Scalable extraction of training data from (production) language models
+Short Description: 'Studies extractable memorization: training data that an adversary
+  can efficiently extract by querying a machine learning model without prior knowledge
+  of the training dataset. Shows an adversary can extract gigabytes of training data
+  from open-source language models like Pythia or GPT-Neo, semi-open models like LLaMA
+  or Falcon, and closed models like ChatGPT.'
+Data Type: Text
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Data-Extraction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

@@ -1,0 +1,19 @@
+URL: https://openreview.net/forum?id=fwzUgo0FM9v
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{fowl2021robbing,\n\
+  \  title={Robbing the fed: Directly obtaining private data in federated learning\
+  \ with modified models},\n  author={Fowl, Liam and Geiping, Jonas and Czaja, Wojtek\
+  \ and Goldblum, Micah and Goldstein, Tom},\n  journal={arXiv preprint arXiv:2110.13057},\n\
+  \  year={2021}\n}"
+Authors: L Fowl, J Geiping, W Czaja, M Goldblum, T Goldstein
+Title: 'Robbing the Fed: Directly Obtaining Private Data in Federated Learning with
+  Modified Models'
+Short Description: Malicious adversary to perform exact reconstruction of the training
+  data in FL
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: 'https://github.com/JonasGeiping/breaching '
+Comments: .nan
+Submitter (your name, affiliation): Dmitrii Usynin, TUM/Imperial College London

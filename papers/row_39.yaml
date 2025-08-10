@@ -1,0 +1,18 @@
+URL: https://openaccess.thecvf.com/content/CVPR2021/html/Yin_See_Through_Gradients_Image_Batch_Recovery_via_GradInversion_CVPR_2021_paper.html
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{yin2021see,\n\
+  \  title={See through gradients: Image batch recovery via gradinversion},\n  author={Yin,\
+  \ Hongxu and Mallya, Arun and Vahdat, Arash and Alvarez, Jose M and Kautz, Jan and\
+  \ Molchanov, Pavlo},\n  booktitle={Proceedings of the IEEE/CVF Conference on Computer\
+  \ Vision and Pattern Recognition},\n  pages={16337--16346},\n  year={2021}\n}"
+Authors: Hongxu Yin, Arun Mallya, Arash Vahdat, Jose M. Alvarez, Jan Kautz, Pavlo
+  Molchanov
+Title: 'See Through Gradients: Image Batch Recovery via GradInversion'
+Short Description: First demonstration of large batch-size model inversion in FL
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: 'https://github.com/JonasGeiping/breaching '
+Comments: .nan
+Submitter (your name, affiliation): Dmitrii Usynin, TUM/Imperial College London

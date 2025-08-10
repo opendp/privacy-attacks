@@ -1,0 +1,21 @@
+URL: https://proceedings.mlr.press/v202/kariyappa23a/kariyappa23a.pdf
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{kariyappa2023cocktail,\n\
+  \  title={Cocktail party attack: Breaking aggregation-based privacy in federated\
+  \ learning using independent component analysis},\n  author={Kariyappa, Sanjay and\
+  \ Guo, Chuan and Maeng, Kiwan and Xiong, Wenjie and Suh, G Edward and Qureshi, Moinuddin\
+  \ K and Lee, Hsien-Hsin S},\n  booktitle={International Conference on Machine Learning},\n\
+  \  pages={15884--15899},\n  year={2023},\n  organization={PMLR}\n}"
+Authors: Sanjay Kariyappa, Chuan Guo, Kiwan Maeng, Wenjie Xiong, G. Edward Suh, Moinuddin
+  K Qureshi, Hsien-Hsin S. Lee
+Title: 'Cocktail Party Attack: Breaking Aggregation-Based Privacy in Federated Learning
+  Using Independent Component Analysis'
+Short Description: Theoretical attempts to present (and attack) secure aggregation
+  in FL
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Theoretical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Dmitrii Usynin, TUM/Imperial College London

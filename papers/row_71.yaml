@@ -1,0 +1,19 @@
+URL: https://arxiv.org/abs/1807.09173
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@ARTICLE{truex2021,\n\
+  \  author={Truex, Stacey and Liu, Ling and Gursoy, Mehmet Emre and Yu, Lei and Wei,\
+  \ Wenqi},\n  journal={IEEE Transactions on Services Computing}, \n  title={Demystifying\
+  \ Membership Inference Attacks in Machine Learning as a Service}, \n  year={2021},\n\
+  \  volume={14},\n  number={6},\n  pages={2073-2089},\n  doi={10.1109/TSC.2019.2897554}}"
+Authors: Stacey Truex, Ling Liu, Mehmet Emre Gursoy, Lei Yu, and Wenqi Wei
+Title: Demystifying Membership Inference Attacks in Machine Learning as a Service
+Short Description: (1) MIA in the style of Shokri et al.'17 with shadow models with
+  architecture different from that of the target model. (2) MIA with access to training
+  gradients in the federated setting.
+Data Type: Image, tabular
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Ilya Mironov, Meta

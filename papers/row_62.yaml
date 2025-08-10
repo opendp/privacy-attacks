@@ -1,0 +1,23 @@
+URL: https://arxiv.org/abs/2206.05199
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{zanella2023bayesian,\n\
+  \    title={Bayesian estimation of differential privacy},\n    author={Zanella-B{\\\
+  'e}guelin, Santiago and Wutschitz, Lukas and Tople, Shruti and Salem, Ahmed and\
+  \ R{\\\"u}hle, Victor and Paverd, Andrew and Naseri, Mohammad and K{\\\"o}pf, Boris\
+  \ and Jones, Daniel},\n    booktitle={ICML},\n    year={2023}\n}"
+Authors: Santiago Zanella-Béguelin, Lukas Wutschitz, Shruti Tople, Ahmed Salem, Victor
+  Rühle, Andrew Paverd, Mohammad Naseri, Boris Köpf, Daniel Jones
+Title: Bayesian Estimation of Differential Privacy
+Short Description: Proposes a novel Bayesian method that greatly reduces sample size,
+  and adapt and validate a heuristic to draw more than one sample per trained model.
+  The Bayesian method exploits the hypothesis testing interpretation of differential
+  privacy to obtain a posterior for ε (not just a confidence interval) from the joint
+  posterior of the false positive and false negative rates of membership inference
+  attacks.
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Information Leakage
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

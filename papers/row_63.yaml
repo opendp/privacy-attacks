@@ -1,0 +1,19 @@
+URL: https://files.sri.inf.ethz.ch/website/papers/sp21-dpsniper.pdf
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{bichsel2021dp,\n\
+  \    title={DP-Sniper: Black-Box Discovery of Differential Privacy Violations using\
+  \ Classifiers},\n    author={Bichsel, Benjamin and Steffen, Samuel and Bogunovic,\
+  \ Ilija and Vechev, Martin},\n    booktitle={IEEE S\\&P},\n    year={2021}\n}"
+Authors: Benjamin Bichsel, Samuel Steffen, Ilija Bogunovic, Martin Vechev
+Title: 'DP-Sniper: Black-Box Discovery of Differential
+
+  Privacy Violations using Classifier'
+Short Description: Present DP-Sniper, a practical black-box method that automatically
+  finds violations of differential privacy.
+Data Type: Tabular
+Type of Release: .nan
+Threat Model --- Attacker Objective: Information Leakage
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

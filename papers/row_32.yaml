@@ -1,0 +1,19 @@
+URL: https://arxiv.org/abs/2307.03694
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{bertran2024scalable,\n\
+  \  title={Scalable membership inference attacks via quantile regression},\n  author={Bertran,\
+  \ Martin and Tang, Shuai and Roth, Aaron and Kearns, Michael and Morgenstern, Jamie\
+  \ H and Wu, Steven Z},\n  journal={Advances in Neural Information Processing Systems},\n\
+  \  volume={36},\n  year={2024}\n}"
+Authors: Martin Betram, Shuai Tang, Michael Kearns, Jamie Morgenstern, Aaron Roth,
+  Zhiwei Steven Wu
+Title: Scalable Membership Inference Attacks via Quantile Regression
+Short Description: Membership inference attack that does not require shadow models
+  but only to train a single regression model to predict quantiles of the logits.
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Johan Östman, AI Sweden

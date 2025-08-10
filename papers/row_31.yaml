@@ -1,0 +1,18 @@
+URL: https://arxiv.org/abs/2208.14933
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{liu2022membership,\n\
+  \  title={Membership inference attacks by exploiting loss trajectory},\n  author={Liu,\
+  \ Yiyong and Zhao, Zhengyu and Backes, Michael and Zhang, Yang},\n  booktitle={Proceedings\
+  \ of the 2022 ACM SIGSAC Conference on Computer and Communications Security},\n\
+  \  pages={2085--2098},\n  year={2022}\n}"
+Authors: Yiyong Liu, Zhengyu Zhao, Michael Backes, Yang Zhang
+Title: Membership inference attacks by exloiting loss trajectories
+Short Description: Membership inference attack based on knowledge distillation to
+  form signals to attack via loss trajectories over multiple epochs.
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: https://github.com/DennisLiu2022/Membership-Inference-Attacks-by-Exploiting-Loss-Trajectory
+Comments: .nan
+Submitter (your name, affiliation): Johan Östman, AI Sweden

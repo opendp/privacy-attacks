@@ -1,0 +1,17 @@
+URL: https://arxiv.org/pdf/1610.05820.pdf
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{shokri2017membership,\n\
+  \  title={Membership inference attacks against machine learning models},\n  author={Shokri,\
+  \ Reza and Stronati, Marco and Song, Congzheng and Shmatikov, Vitaly},\n  booktitle={2017\
+  \ IEEE symposium on security and privacy (SP)},\n  pages={3--18},\n  year={2017},\n\
+  \  organization={IEEE}\n}"
+Authors: Shokri, R., Stronati, M., Song, C. and Shmatikov
+Title: Shokri, R., Stronati, M., Song, C. and Shmatikov
+Short Description: The original membership inference based on shadow models
+Data Type: .nan
+Type of Release: .nan
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): James Honaker, Anonym

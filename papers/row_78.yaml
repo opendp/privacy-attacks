@@ -1,0 +1,22 @@
+URL: https://www.usenix.org/conference/usenixsecurity24/presentation/debenedetti
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@misc{debenedetti2024privacychannelsmachinelearning,\n\
+  \      title={Privacy Side Channels in Machine Learning Systems}, \n      author={Edoardo\
+  \ Debenedetti and Giorgio Severi and Nicholas Carlini and Christopher A. Choquette-Choo\
+  \ and Matthew Jagielski and Milad Nasr and Eric Wallace and Florian Tramèr},\n \
+  \     year={2024},\n      eprint={2309.05610},\n      archivePrefix={arXiv},\n \
+  \     primaryClass={cs.CR},\n      url={https://arxiv.org/abs/2309.05610}, \n}"
+Authors: Edoardo Debenedetti, Giorgio Severi, Nicholas Carlini, Christopher A. Choquette-Choo,
+  Matthew Jagielski, Milad Nasr, Eric Wallace, Florian Tramèr
+Title: Privacy Side Channels in Machine Learning Systems
+Short Description: 'Introduces privacy side channel attacks that exploit ML system
+  components (data filtering, preprocessing, post-processing, and query filtering)
+  to circumvent differential privacy guarantees and enable enhanced membership inference
+  and data extraction, '
+Data Type: Text
+Type of Release: .nan
+Threat Model --- Attacker Objective: Information Leakage
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Yash Maurya, Independent Researcher

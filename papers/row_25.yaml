@@ -1,0 +1,18 @@
+URL: https://arxiv.org/abs/1705.07663
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{hayes2019logan,\n\
+  \  title={{LOGAN}: membership inference attacks against generative models},\n  author={Hayes,\
+  \ Jamie and Melis, Luca and Danezis, George and De Cristofaro, Emiliano},\n  booktitle={PoPETs},\n\
+  \  year={2019},\n}"
+Authors: Jamie Hayes, Luca Melis, George Danezis, Emiliano De Cristofaro
+Title: 'LOGAN: Membership Inference Attacks Against Generative Models'
+Short Description: 'Presents the first membership inference attacks against generative
+  models (GANs): given a data point, the adversary determines whether or not it was
+  used to train the model.'
+Data Type: Image
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

@@ -1,0 +1,17 @@
+URL: https://arxiv.org/pdf/2206.10469.pdf
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{carlini2022privacy,\n\
+  \  title={The privacy onion effect: Memorization is relative},\n  author={Carlini,\
+  \ Nicholas and Jagielski, Matthew and Zhang, Chiyuan and Papernot, Nicolas and Terzis,\
+  \ Andreas and Tramer, Florian},\n  journal={Advances in Neural Information Processing\
+  \ Systems},\n  volume={35},\n  pages={13263--13276},\n  year={2022}\n}"
+Authors: Carlini et al.
+Title: 'The Privacy Onion Effect: Memorization is Relative'
+Short Description: Removing vulnerable records makes other records vulnerable
+Data Type: Tabular
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Yves-Alexandre de Montjoye, Imperial College

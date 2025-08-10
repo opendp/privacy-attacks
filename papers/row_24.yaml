@@ -1,0 +1,19 @@
+URL: https://arxiv.org/abs/1909.03935
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{chen2020gan,\n\
+  \  title={Gan-leaks: a taxonomy of membership inference attacks against generative\
+  \ models},\n  author={Chen, Dingfan and Yu, Ning and Zhang, Yang and Fritz, Mario},\n\
+  \  booktitle={ACM CCS},\n  year={2020},\n}"
+Authors: Dingfan Chen, Ning Yu, Yang Zhang, Mario Fritz
+Title: 'Gan-leaks: a taxonomy of membership inference attacks against generative models'
+Short Description: Presents a taxonomy of membership inference attacks, encompassing
+  not only existing attacks but also our novel ones. Moreover, provides a theoretically
+  grounded attack calibration technique, which consistently boosts the attack performance
+  in all cases, across different attack settings, data modalities, and training configurations.
+Data Type: Image
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

@@ -1,0 +1,20 @@
+URL: https://arxiv.org/pdf/2411.00154
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{puerto2024scaling,\n\
+  \  title={Scaling Up Membership Inference: When and How Attacks Succeed on Large\
+  \ Language Models},\n  author={Puerto, Haritz and Gubri, Martin and Yun, Sangdoo\
+  \ and Oh, Seong Joon},\n  journal={arXiv preprint arXiv:2411.00154},\n  year={2024}\n\
+  }"
+Authors: Haritz Puerto, Martin Gubri, Sangdoo Yun, Seong Joon Oh
+Title: 'Scaling Up Membership Inference: When and How Attacks Succeed on Large Language
+  Models'
+Short Description: 'Discusses how MIA should be performed in the context of LLMs:
+  at a word/phrase/doc level and how evaluating that impacts the performance of the
+  adversary'
+Data Type: Text
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): .nan

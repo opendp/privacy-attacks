@@ -1,0 +1,18 @@
+URL: https://arxiv.org/abs/2305.18462
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{mattern2023membership,\n\
+  \  title={Membership inference attacks against language models via neighbourhood\
+  \ comparison},\n  author={Mattern, Justus and Mireshghallah, Fatemehsadat and Jin,\
+  \ Zhijing and Sch{\\\"o}lkopf, Bernhard and Sachan, Mrinmaya and Berg-Kirkpatrick,\
+  \ Taylor},\n  journal={arXiv preprint arXiv:2305.18462},\n  year={2023}\n}"
+Authors: Justus Mattern et al.
+Title: Membership Inference Attacks against Language Models via Neighbourhood Comparison
+Short Description: Memership inference attack agaisnt LLMs by generating neighbours
+  which are perturbed text using a mask model like BERT
+Data Type: Text
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Applications
+Links to Artifacts: https://github.com/mireshghallah/neighborhood-curvature-mia
+Comments: .nan
+Submitter (your name, affiliation): Hamid Mozaffari, Oracle Labs

@@ -1,0 +1,20 @@
+URL: https://dl.acm.org/doi/10.1145/3291276.3295691
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{garfinkel2019understanding,\n\
+  \  title={Understanding database reconstruction attacks on public data},\n  author={Garfinkel,\
+  \ Simson and Abowd, John M and Martindale, Christian},\n  journal={ACM Queue},\n\
+  \  year={2019},\n}"
+Authors: Simson Garfinkel, John M Abowd, Christian Martindale
+Title: Understanding database reconstruction attacks on public data
+Short Description: Database reconstruction attacks can be performed by using published
+  statistical tables to create a set of mathematical constraints and then solving
+  the resulting set of simultaneous equations. Shows how such an attack can be addressed
+  by adding noise to the published tabulations, so that the reconstruction no longer
+  results in the original data. This has implications for the 2020 Census.
+Data Type: Tabular
+Type of Release: Linear-Queries
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

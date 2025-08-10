@@ -1,0 +1,18 @@
+URL: https://archive.dimacs.rutgers.edu/~graham/pubs/papers/empiricalpriv.pdf
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{cormode2013empirical,\n\
+  \  title={Empirical privacy and empirical utility of anonymized data},\n  author={Cormode,\
+  \ Graham and Procopiuc, Cecilia M and Shen, Entong and Srivastava, Divesh and Yu,\
+  \ Ting},\n  booktitle={2013 IEEE 29th International Conference on Data Engineering\
+  \ Workshops (ICDEW)},\n  pages={77--82},\n  year={2013},\n  organization={IEEE}\n\
+  }"
+Authors: Cormode, G., Procopiuc, C.M., Shen, E., Srivastava, D. and Yu, T
+Title: Empirical privacy and empirical utility of anonymized data.
+Short Description: Naive Bayes attacks against simple workloads of statistics
+Data Type: Tabular
+Type of Release: Linear-Queries
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): James Honaker, Anonym

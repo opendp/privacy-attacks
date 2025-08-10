@@ -1,0 +1,19 @@
+URL: https://ieeexplore.ieee.org/document/8429311
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@INPROCEEDINGS{8429311,\n\
+  \  author={Yeom, Samuel and Giacomelli, Irene and Fredrikson, Matt and Jha, Somesh},\n\
+  \  booktitle={2018 IEEE 31st Computer Security Foundations Symposium (CSF)}, \n\
+  \  title={Privacy Risk in Machine Learning: Analyzing the Connection to Overfitting},\
+  \ \n  year={2018},\n  volume={},\n  number={},\n  pages={268-282},\n  keywords={Privacy;Machine\
+  \ learning algorithms;Data models;Training data;Machine learning;Training;privacy;machine-learning;inference-attacks},\n\
+  \  doi={10.1109/CSF.2018.00027}}\n"
+Authors: Samuel Yeom; Irene Giacomelli; Matt Fredrikson; Somesh Jha
+Title: 'Privacy Risk in Machine Learning: Analyzing the Connection to Overfitting'
+Short Description: MIA attack based on final loss for LLMs
+Data Type: Text
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Daniil Filienko, University of Washington

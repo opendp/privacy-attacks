@@ -1,0 +1,20 @@
+URL: https://arxiv.org/abs/1802.08232
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{carlini2019secret,\n\
+  \  title={The secret sharer: Evaluating and testing unintended memorization in neural\
+  \ networks},\n  author={Carlini, Nicholas and Liu, Chang and Erlingsson, {\\'U}lfar\
+  \ and Kos, Jernej and Song, Dawn},\n  booktitle={28th USENIX security symposium\
+  \ (USENIX security 19)},\n  pages={267--284},\n  year={2019}\n}"
+Authors: Nicholas Carlini, Chang Liu, Úlfar Erlingsson, Jernej Kos, Dawn Song
+Title: 'The Secret Sharer: Evaluating and Testing Unintended Memorization in Neural
+  Networks'
+Short Description: Describes a testing methodology for quantitatively assessing the
+  risk that rare or unique training-data sequences are unintentionally memorized by
+  generative sequence models.
+Data Type: Text
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Data-Extraction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

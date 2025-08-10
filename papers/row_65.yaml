@@ -1,0 +1,18 @@
+URL: https://arxiv.org/abs/2406.11544
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{suri2024do,\n\
+  \  title = {Do Parameters Reveal More than Loss for Membership Inference?},\n  author\
+  \ = {Suri, Anshuman and Zhang, Xiao and Evans, David},\n  journal = {Transactions\
+  \ on Machine Learning Research (TMLR)},\n  year = {2024},\n  url = {https://arxiv.org/abs/2406.11544},\n\
+  }"
+Authors: Anshuman Suri, Xiao Zhang, David Evans
+Title: Do Parameters Reveal More than Loss for Membership Inference?
+Short Description: The paper shows how prior claims about black-box access sufficing
+  for optimal membership inference do not hold for most useful settings such as SGD
+Data Type: Tabular
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Theoretical
+Links to Artifacts: https://github.com/iamgroot42/iha_hild
+Comments: .nan
+Submitter (your name, affiliation): Anshuman Suri, UVA

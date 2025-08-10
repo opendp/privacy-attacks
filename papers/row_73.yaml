@@ -1,0 +1,29 @@
+URL: https://arxiv.org/abs/2312.11283
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@misc{abowd20232010censusconfidentialityprotections,\
+  \ \ntitle={The 2010 Census Confidentiality Protections Failed, Here's How and Why},\
+  \ \nauthor={John M. Abowd and Tamara Adams and Robert Ashmead and David Darais and\
+  \ Sourya Dey and Simson L. Garfinkel and Nathan Goldschlag and Daniel Kifer and\
+  \ Philip Leclerc and Ethan Lew and Scott Moore and Rolando A. Rodríguez and Ramy\
+  \ N. Tadros and Lars Vilhuber}, \nyear={2023}, \neprint={2312.11283}, \narchivePrefix={arXiv},\
+  \ \n}"
+Authors: John M. Abowd, Tamara Adams, Robert Ashmead, David Darais, Sourya Dey, Simson
+  L. Garfinkel, Nathan Goldschlag, Daniel Kifer, Philip Leclerc, Ethan Lew, Scott
+  Moore, Rolando A. Rodríguez, Ramy N. Tadros, Lars Vilhuber
+Title: The 2010 Census Confidentiality Protections Failed, Here's How and Why
+Short Description: The definitive analysis of the reconstruction-abetted reidentification
+  attack on the 2010 Census data. Microdata were reconstructed from tabular summaries
+  using a series of Integer Programs. An additional Integer Program assesses the solution
+  variability. For 97 million of 308 million persons, the reconstruction is provably
+  perfect. For perfectly reconstructed persons with atypical characteristics within
+  their geography, inferences about these characteristics are correct with probability
+  0.95, far in excess of correct inferences from purely statistical models. Inferences
+  are also correct with similar probability for typical persons within their geography,
+  but such inferences could have been made with a purely statistical model.
+Data Type: Tabular
+Type of Release: Linear-Queries
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: https://github.com/uscensusbureau/recon_replication
+Comments: .nan
+Submitter (your name, affiliation): John Abowd, Cornell

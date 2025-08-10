@@ -1,0 +1,18 @@
+URL: https://arxiv.org/abs/2404.02936
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{zhang2024min,\n\
+  \  title={Min-K\\%++: Improved Baseline for Detecting Pre-Training Data from Large\
+  \ Language Models},\n  author={Zhang, Jingyang and Sun, Jingwei and Yeats, Eric\
+  \ and Ouyang, Yang and Kuo, Martin and Zhang, Jianyi and Yang, Hao and Li, Hai},\n\
+  \  journal={arXiv preprint arXiv:2404.02936},\n  year={2024}\n}"
+Authors: 'Jingyang Zhang et al. '
+Title: 'Min-K%++: Improved Baseline for Detecting Pre-Training Data from Large Language
+  Models'
+Short Description: 'Impvroved the Min-K attack by normalizing the log prob of tokens '
+Data Type: Text
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Applications
+Links to Artifacts: https://zjysteven.github.io/mink-plus-plus/
+Comments: .nan
+Submitter (your name, affiliation): Hamid Mozaffari, Oracle Labs

@@ -1,0 +1,22 @@
+URL: https://arxiv.org/abs/2411.16516
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{Wang_2024,\
+  \ series={CCS ’24},\n   title={Curator Attack: When Blackbox Differential Privacy\
+  \ Auditing Loses Its Power},\n   url={http://dx.doi.org/10.1145/3658644.3690367},\n\
+  \   DOI={10.1145/3658644.3690367},\n   booktitle={Proceedings of the 2024 on ACM\
+  \ SIGSAC Conference on Computer and Communications Security},\n   publisher={ACM},\n\
+  \   author={Wang, Shiming and Xiang, Liyao and Cheng, Bowei and Ji, Zhe and Sun,\
+  \ Tianran and Wang, Xinbing},\n   year={2024},\n   month=dec, pages={3540–3554},\n\
+  \   collection={CCS ’24} }"
+Authors: Shiming Wang, Liyao Xiang, Bowei Cheng, Zhe Ji, Tianran Sun, Xinbing Wang
+Title: 'Curator Attack: When Blackbox Differential Privacy Auditing Loses Its Power'
+Short Description: This identifies a critical flaw in blackbox differential privacy
+  auditing tools where their inability to accurately detect small probabilities allows
+  data curators to pass audits with falsely strong privacy guarantees.
+Data Type: Tabular
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Information Leakage
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: https://github.com/ShimingWang98/Curator-Attack-When-Blackbox-DP-Auditing-Loses-Its-Power
+Comments: .nan
+Submitter (your name, affiliation): Yash Maurya, Independent Researcher

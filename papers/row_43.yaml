@@ -1,0 +1,18 @@
+URL: https://petsymposium.org/2019/files/papers/issue4/popets-2019-0067.pdf
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{hilprecht2019monte,\n\
+  \  title={{Monte carlo and reconstruction membership inference attacks against generative\
+  \ models}},\n  author={Hilprecht, Benjamin and H{\\\"a}rterich, Martin and Bernau,\
+  \ Daniel},\n  booktitle={PoPETs},\n  year={2019},\n}"
+Authors: Benjamin Hilprecht, Martin Härterich, and Daniel Bernau
+Title: Monte Carlo and Reconstruction Membership Inference Attacks against Generative
+  Models
+Short Description: Present two information leakage attacks that outperform previous
+  work on membership inference against generative models.
+Data Type: Image
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

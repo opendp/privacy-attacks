@@ -1,0 +1,22 @@
+URL: https://arxiv.org/abs/2312.05114
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{ganev2023inadequacy,\n\
+  \    title={On the Inadequacy of Similarity-based Privacy Metrics: Reconstruction\
+  \ Attacks against \"Truly Anonymous Synthetic Data\"},\n    author={Ganev, Georgi\
+  \ and De Cristofaro, Emiliano},\n    journal={arXiv:2312.05114},\n    year={2023}\n\
+  }"
+Authors: Georgi Ganev, Emiliano De Cristofaro
+Title: 'On the Inadequacy of Similarity-based Privacy Metrics: Reconstruction Attacks
+  against "Truly Anonymous Synthetic Data"'
+Short Description: Reviews the privacy metrics offered by leading companies in this
+  space and sheds light on a few critical flaws in reasoning about privacy entirely
+  via empirical evaluations. Presents a reconstruction attack, ReconSyn, which successfully
+  recovers at least 78% of the low-density train records (or outliers) with only black-box
+  access to a single fitted generative model and the privacy metrics.
+Data Type: Tabular
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

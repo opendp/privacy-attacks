@@ -1,0 +1,18 @@
+URL: https://openreview.net/pdf?id=7WsivwyHrS
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{wuyou,\n\
+  \  title={You Only Query Once: An Efficient Label-Only Membership Inference Attack},\n\
+  \  author={Wu, Yutong and Qiu, Han and Guo, Shangwei and Li, Jiwei and Zhang, Tianwei},\n\
+  \  booktitle={The Twelfth International Conference on Learning Representations}\n\
+  }"
+Authors: Yutong Wu, Han Qiu, Shangwei Guo, Jiwei Li, Tianwei Zhang
+Title: 'You only query once: an efficient label-only membership inference attack'
+Short Description: 'Strategies to craft query examples to reduce the required number
+  of queries  '
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: https://github.com/WU-YU-TONG/YOQO
+Comments: .nan
+Submitter (your name, affiliation): Johan Östman, AI Sweden

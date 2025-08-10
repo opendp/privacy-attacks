@@ -1,0 +1,19 @@
+URL: https://dl.acm.org/doi/pdf/10.1145/3576915.3616607
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{lokna2023group,\n\
+  \    title={Group and Attack: Auditing Differential Privacy},\n    author={Lokna,\
+  \ Johan and Paradis, Anouk and Dimitrov, Dimitar I and Vechev, Martin},\n    booktitle={CCS},\n\
+  \    year={2023}\n}"
+Authors: Johan Lokna, Anouk Paradis, Dimitar I. Dimitrov, Martin Vechev
+Title: 'Group and Attack: Auditing Differential Privacy'
+Short Description: Present a novel method to efficiently discover (𝜖, 𝛿) differential
+  privacy violations based on the key insight that many (𝜖, 𝛿) pairs can be grouped
+  as they result in the same algorithm. Crucially, the method is orthogonal to existing
+  approaches and, when combined, results in a faster and more precise violation search.
+Data Type: .nan
+Type of Release: .nan
+Threat Model --- Attacker Objective: Information Leakage
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: https://github.com/eth-sri/Delta-Siege
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

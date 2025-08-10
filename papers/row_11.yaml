@@ -1,0 +1,18 @@
+URL: https://arxiv.org/abs/2003.14053
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{geiping2020inverting,\n\
+  \  title={Inverting gradients-how easy is it to break privacy in federated learning?},\n\
+  \  author={Geiping, Jonas and Bauermeister, Hartmut and Dr{\\\"o}ge, Hannah and\
+  \ Moeller, Michael},\n  journal={Advances in neural information processing systems},\n\
+  \  volume={33},\n  pages={16937--16947},\n  year={2020}\n}"
+Authors: Geiping et al.
+Title: Inverting Gradients -- How easy is it to break privacy in federated learning?
+Short Description: Gradient inversion attack (reconstruct data point from gradient)
+  - application to federated learning
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: 'https://github.com/JonasGeiping/breaching '
+Comments: .nan
+Submitter (your name, affiliation): Aurélien Bellet, Inria

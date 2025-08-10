@@ -1,0 +1,18 @@
+URL: https://arxiv.org/abs/2310.16789
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{shi2023detecting,\n\
+  \  title={Detecting pretraining data from large language models},\n  author={Shi,\
+  \ Weijia and Ajith, Anirudh and Xia, Mengzhou and Huang, Yangsibo and Liu, Daogao\
+  \ and Blevins, Terra and Chen, Danqi and Zettlemoyer, Luke},\n  journal={arXiv preprint\
+  \ arXiv:2310.16789},\n  year={2023}\n}"
+Authors: Weijia Shi et al.
+Title: Detecting Pretraining Data from Large Language Models
+Short Description: 'introduces Min-K prob attack: Membership Inference atttack agaisnt
+  LLMs using average of lowest k probable tokens in the target sequence.'
+Data Type: Text
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Applications
+Links to Artifacts: https://swj0419.github.io/detect-pretrain.github.io/
+Comments: .nan
+Submitter (your name, affiliation): Hamid Mozaffari, Oracle Labs

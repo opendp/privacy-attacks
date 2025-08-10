@@ -1,0 +1,16 @@
+URL: https://proceedings.neurips.cc/paper_files/paper/2023/file/9a6f6e0d6781d1cb8689192408946d73-Paper-Conference.pdf
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{steinke2024privacy,\n\
+  \  title={Privacy auditing with one (1) training run},\n  author={Steinke, Thomas\
+  \ and Nasr, Milad and Jagielski, Matthew},\n  journal={Advances in Neural Information\
+  \ Processing Systems},\n  volume={36},\n  year={2024}\n}"
+Authors: Steinke, T., Nasr, M. and Jagielski, M.
+Title: Privacy Auditing with One (1) Training Run.
+Short Description: .nan
+Data Type: .nan
+Type of Release: .nan
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): James Honaker, Anonym

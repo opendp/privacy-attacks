@@ -1,0 +1,17 @@
+URL: https://arxiv.org/abs/2005.13702
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@InProceedings{Rezaei_2021_CVPR,\n\
+  \    author    = {Rezaei, Shahbaz and Liu, Xin},\n    title     = {On the Difficulty\
+  \ of Membership Inference Attacks},\n    booktitle = {Proceedings of the IEEE/CVF\
+  \ Conference on Computer Vision and Pattern Recognition (CVPR)},\n    month    \
+  \ = {June},\n    year      = {2021},\n    pages     = {7892-7900}\n}"
+Authors: Shahbaz Rezaei, Xin Liu
+Title: On the Difficulty of Membership Inference Attacks
+Short Description: Critique of prior MIAs for their poor false positive rate.
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: https://github.com/shrezaei/MI-Attack
+Comments: .nan
+Submitter (your name, affiliation): .nan

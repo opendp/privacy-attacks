@@ -1,0 +1,22 @@
+URL: https://arxiv.org/pdf/2211.06550.pdf
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{houssiau2022tapas,\n\
+  \  title={Tapas: a toolbox for adversarial privacy auditing of synthetic data},\n\
+  \  author={Houssiau, Florimond and Jordon, James and Cohen, Samuel N and Daniel,\
+  \ Owen and Elliott, Andrew and Geddes, James and Mole, Callum and Rangel-Smith,\
+  \ Camila and Szpruch, Lukasz},\n  journal={arXiv preprint arXiv:2211.06550},\n \
+  \ year={2022}\n}"
+Authors: Florimond Houssiau, James Jordon, Samuel N. Cohen, Owen Daniel, Andrew Elliott,
+  James Geddes, Callum Mole, Camila Rangel-Smith, Lukasz Szpruch
+Title: 'Tapas: Toolbox for Adversarial Privacy Auditing of
+
+  Synthetic Data'
+Short Description: A system of classification of MIA attacks presented as part of
+  a toolbox of attacks to evaluate synthetic data privacy under a wide range of scenarios
+Data Type: Tabular
+Type of Release: .nan
+Threat Model --- Attacker Objective: .nan
+Threat Model --- Attacker Capabilities: .nan
+Research Type: .nan
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Daniil Filienko, University of Washington

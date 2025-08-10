@@ -1,0 +1,18 @@
+URL: https://arxiv.org/abs/2202.00580
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{wen2022fishing,\n\
+  \  title={Fishing for user data in large-batch federated learning via gradient magnification},\n\
+  \  author={Wen, Yuxin and Geiping, Jonas and Fowl, Liam and Goldblum, Micah and\
+  \ Goldstein, Tom},\n  journal={arXiv preprint arXiv:2202.00580},\n  year={2022}\n\
+  }"
+Authors: Yuxin Wen, Jonas Geiping, Liam Fowl, Micah Goldblum, Tom Goldstein
+Title: Fishing for User Data in Large-Batch Federated Learning via Gradient Magnification
+Short Description: Malicious adversary to perform exact reconstruction of the training
+  data in FL, this time with (almost) arbitrarily large batch sizes
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: 'https://github.com/JonasGeiping/breaching '
+Comments: .nan
+Submitter (your name, affiliation): Dmitrii Usynin, TUM/Imperial College London

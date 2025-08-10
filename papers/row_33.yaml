@@ -1,0 +1,19 @@
+URL: https://arxiv.org/abs/2007.14321
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{choquette2021label,\n\
+  \  title={Label-only membership inference attacks},\n  author={Choquette-Choo, Christopher\
+  \ A and Tramer, Florian and Carlini, Nicholas and Papernot, Nicolas},\n  booktitle={International\
+  \ conference on machine learning},\n  pages={1964--1974},\n  year={2021},\n  organization={PMLR}\n\
+  }"
+Authors: Christopher A. Choquette-Choo, Florian Tramer, Nicholas Carlini. Nicolas
+  Papernot
+Title: Label-only membership inference attacks
+Short Description: Black-box membership inference attacl with label-only access. Signals
+  are created by probing the mode with permutations around a given datapoint.
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Johan Östman, AI Sweden

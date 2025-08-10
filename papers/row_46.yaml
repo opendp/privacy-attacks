@@ -1,0 +1,19 @@
+URL: https://arxiv.org/pdf/2302.03098.pdf
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{andrew2023one,\n\
+  \  title={One-shot empirical privacy estimation for federated learning},\n  author={Andrew,\
+  \ Galen and Kairouz, Peter and Oh, Sewoong and Oprea, Alina and McMahan, H Brendan\
+  \ and Suriyakumar, Vinith},\n  journal={arXiv preprint arXiv:2302.03098},\n  year={2023}\n\
+  }"
+Authors: Galen Andrew, Peter Kairouz, Sewoong Oh, Alina Oprea, H. Brendan McMahan,
+  Vinith M. Suriyakumar
+Title: One-shot Empirical Privacy Estimation for Federated Learning
+Short Description: 'Presents an apporach for performing a strong white-box attack
+  for measuring the DP epsilon of ML training algos in 1 training run. '
+Data Type: .nan
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: .nan
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Peter Kairouz, Google

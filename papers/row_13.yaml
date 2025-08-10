@@ -1,0 +1,17 @@
+URL: https://projects.iq.harvard.edu/files/privacytools/files/pdf_02.pdf
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{dwork2017exposed,\n\
+  \  title={Exposed! a survey of attacks on private data},\n  author={Dwork, Cynthia\
+  \ and Smith, Adam and Steinke, Thomas and Ullman, Jonathan},\n  journal={Annual\
+  \ Review of Statistics and Its Application},\n  volume={4},\n  number={1},\n  pages={61--84},\n\
+  \  year={2017},\n  publisher={Annual Reviews}\n}"
+Authors: Dwork, C., Smith, A., Steinke, T. and Ullman, J.
+Title: Exposed! a survey of attacks on private data.
+Short Description: Survey of privacy attacks
+Data Type: Tabular
+Type of Release: .nan
+Threat Model --- Attacker Objective: .nan
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Theoretical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): James Honaker, Anonym

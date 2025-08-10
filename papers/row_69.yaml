@@ -1,0 +1,21 @@
+URL: https://arxiv.org/abs/2111.08440
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{watson2022-difficulty,\n\
+  \  author       = {Lauren Watson and\n                  Chuan Guo and\n        \
+  \          Graham Cormode and\n                  Alexandre Sablayrolles},\n  title\
+  \        = {On the Importance of Difficulty Calibration in Membership Inference\n\
+  \                  Attacks},\n  booktitle    = {The Tenth International Conference\
+  \ on Learning Representations, {ICLR}\n                  2022, Virtual Event, April\
+  \ 25-29, 2022},\n  publisher    = {OpenReview.net},\n  year         = {2022},\n\
+  \  url          = {https://openreview.net/forum?id=3eIrli0TwQ},}"
+Authors: Lauren Watson, Chuan Guo, Graham Cormode, Alex Sablayrolles
+Title: On the Importance of Difficulty Calibration in Membership Inference Attacks
+Short Description: Improvement in membership inference attacks by taking into account
+  the difficulty of correct classification
+Data Type: Image, tabular
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: https://github.com/facebookresearch/calibration_membership
+Comments: .nan
+Submitter (your name, affiliation): Ilya Mironov, Meta

@@ -1,0 +1,17 @@
+URL: https://www.ndss-symposium.org/wp-content/uploads/2018/02/ndss2018_05B-5_Pyrgelis_paper.pdf
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{pyrgelis2017knock,\n\
+  \  title={Knock knock, who's there? Membership inference on aggregate location data},\n\
+  \  author={Pyrgelis, Apostolos and Troncoso, Carmela and De Cristofaro, Emiliano},\n\
+  \  journal={arXiv preprint arXiv:1708.06145},\n  year={2017}\n}"
+Authors: Apostolos Pyrgelis, Carmela Troncoso, Emiliano de Cristofaro
+Title: Knock Knock, Who's There? Membership Inference on Aggregate Location Data
+Short Description: Membership inference attacks against location aggregates
+Data Type: Tabular
+Type of Release: Linear-Queries
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Ana-Maria Cretu, EPFL Yves-Alexandre de Montjoye,
+  Imperial College

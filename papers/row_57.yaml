@@ -1,0 +1,18 @@
+URL: https://arxiv.org/abs/2201.04845
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{balle2022reconstructing,\n\
+  \  title={Reconstructing training data with informed adversaries},\n  author={Balle,\
+  \ Borja and Cherubin, Giovanni and Hayes, Jamie},\n  booktitle={IEEE S\\&P},\n \
+  \ year={2022},\n}"
+Authors: Borja Balle, Giovanni Cherubin, Jamie Hayes
+Title: Reconstructing training data with informed adversaries
+Short Description: Studies how given access to a machine learning model an adversary
+  can reconstruct the model's training data from the lens of a powerful informed adversary
+  who knows all the training data points except one.
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

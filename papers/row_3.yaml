@@ -1,0 +1,22 @@
+URL: https://arxiv.org/abs/2405.10994
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{annamalai2024you,\n\
+  \  title={\" What do you want from theory alone?\" Experimenting with Tight Auditing\
+  \ of Differentially Private Synthetic Data Generation},\n  author={Annamalai, Meenatchi\
+  \ Sundaram Muthu Selva and Ganev, Georgi and De Cristofaro, Emiliano},\n  journal={USENIX\
+  \ Security},\n  year={2024}\n}"
+Authors: Meenatchi Sundaram Muthu Selva Annamalai, Georgi Ganev, Emiliano De Cristofaro
+Title: '"What do you want from theory alone?" Experimenting with Tight Auditing of
+  Differentially Private Synthetic Data Generation'
+Short Description: Audits six implementations of DP synthetic data generative models
+  using different datasets and threat models and finds that commonly used black-box
+  MIAs are severely limited in power, yielding remarkably loose empirical privacy
+  estimates. Considers MIAs in stronger threat models, i.e., passive and active white-box,
+  using both existing and newly proposed attacks.
+Data Type: Tabular
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: https://github.com/spalabucr/synth-audit
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

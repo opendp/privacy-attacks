@@ -1,0 +1,22 @@
+URL: https://arxiv.org/abs/2405.10994
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@misc{annamalai2024whatwanttheoryalone,\n\
+  \      title={\"What do you want from theory alone?\" Experimenting with Tight Auditing\
+  \ of Differentially Private Synthetic Data Generation}, \n      author={Meenatchi\
+  \ Sundaram Muthu Selva Annamalai and Georgi Ganev and Emiliano De Cristofaro},\n\
+  \      year={2024},\n      eprint={2405.10994},\n      archivePrefix={arXiv},\n\
+  \      primaryClass={cs.CR},\n      url={https://arxiv.org/abs/2405.10994}, \n}"
+Authors: Meenatchi Sundaram Muthu Selva Annamalai, Georgi Ganev, Emiliano De Cristofaro
+Title: '"What do you want from theory alone?" Experimenting with Tight Auditing of
+  Differentially Private Synthetic Data Generation'
+Short Description: Introduces a systemic auditing framework for differentialy private
+  synthetic data generation algorithms by using tight memebership inference attacks
+  unfer multiple threat models to verify their privacy guarantees and detect implementation
+  violations
+Data Type: Tabular
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: https://github.com/spalabucr/synth-audit
+Comments: .nan
+Submitter (your name, affiliation): Yash Maurya, Independent Researcher

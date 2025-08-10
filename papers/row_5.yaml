@@ -1,0 +1,22 @@
+URL: https://www.pnas.org/doi/10.1073/pnas.2218605120
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{dick2023confidence,\n\
+  \  title={Confidence-ranked reconstruction of census microdata from published statistics},\n\
+  \  author={Dick, Travis and Dwork, Cynthia and Kearns, Michael and Liu, Terrance\
+  \ and Roth, Aaron and Vietri, Giuseppe and Wu, Zhiwei Steven},\n  journal={Proceedings\
+  \ of the National Academy of Sciences},\n  volume={120},\n  number={8},\n  pages={e2218605120},\n\
+  \  year={2023},\n  publisher={National Acad Sciences}\n}"
+Authors: Travis Dick, Cynthia Dwork, Michael Kearns, Terrance Liu, Aaron Roth, Giuseppe
+  Vietri, and Zhiwei Steven Wu
+Title: Confidence-ranked reconstruction of census microdata frompublished statistics
+Short Description: Ranking rows in reconstructed microdata by how confident the adversary
+  is that are in the true dataset.
+Data Type: Tabular
+Type of Release: Linear-Queries
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: 'I didn''t want to give it it''s own row but linking a rebuttal paper which
+  is interesting in that it is indicative of arguments people make against reconstruction
+  attacks: https://arxiv.org/abs/2311.03171'
+Submitter (your name, affiliation): Audra McMillan, Apple

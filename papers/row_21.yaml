@@ -1,0 +1,21 @@
+URL: https://arxiv.org/abs/2301.13188
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{carlini2023extracting,\n\
+  \  title={Extracting training data from diffusion models},\n  author={Carlini, Nicholas\
+  \ and Hayes, Jamie and Nasr, Milad and Jagielski, Matthew and Sehwag, Vikash and\
+  \ Tram{\\`e}r, Florian and Balle, Borja and Ippolito, Daphne and Wallace, Eric},\n\
+  \  journal={USENIX Security},\n  year={2023}\n}"
+Authors: Nicholas Carlini, Jamie Hayes, Milad Nasr, Matthew Jagielski, Vikash Sehwag,
+  Florian Tramèr, Borja Balle, Daphne Ippolito, Eric Wallace
+Title: Extracting training data from diffusion models
+Short Description: Show that diffusion models memorize individual images from their
+  training data and emit them at generation time. With a generate-and-filter pipeline,
+  extracts over a thousand training examples from state-of-the-art models, ranging
+  from photographs of individual people to trademarked company logos.
+Data Type: Image
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Data-Extraction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

@@ -1,0 +1,19 @@
+URL: https://arxiv.org/abs/2211.10459
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{giomi2022unified,\n\
+  \  title={A unified framework for quantifying privacy risk in synthetic data},\n\
+  \  author={Giomi, Matteo and Boenisch, Franziska and Wehmeyer, Christoph and Tasn{\\\
+  'a}di, Borb{\\'a}la},\n  booktitle={PETs},\n  year={2023},\n}"
+Authors: Matteo Giomi, Franziska Boenisch, Christoph Wehmeyer, Borbála Tasnádi
+Title: A Unified Framework for Quantifying Privacy Risk in Synthetic Data
+Short Description: Present Anonymeter, a statistical framework to jointly quantify
+  different types of privacy risks in synthetic tabular datasets. Equips this framework
+  with attack-based evaluations for the singling out, linkability, and inference risks,
+  the three key indicators of factual anonymization according to the GDPR.
+Data Type: Tabular
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

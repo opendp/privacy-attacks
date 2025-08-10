@@ -1,0 +1,23 @@
+URL: https://arxiv.org/abs/2203.03929
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{mireshghallah2022quantifying,\n\
+  \  title={Quantifying privacy risks of masked language models using membership inference\
+  \ attacks},\n  author={Mireshghallah, Fatemehsadat and Goyal, Kartik and Uniyal,\
+  \ Archit and Berg-Kirkpatrick, Taylor and Shokri, Reza},\n  journal={arXiv preprint\
+  \ arXiv:2203.03929},\n  year={2022}\n}"
+Authors: Fatemehsadat Mireshghallah, Kartik Goyal, Archit Uniyal, Taylor Berg-Kirkpatrick,
+  Reza Shokri
+Title: 'Quantifying Privacy Risks of Masked Language Models Using Membership Inference
+  Attacks
+
+  '
+Short Description: Membership inference attack based on likelihood ratio hypothesis
+  testing that involves an additional reference MLM to more accurately quantify the
+  privacy risks of memorization in MLMs.
+Data Type: Text
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Applications
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Daniil Filienko, University of Washington

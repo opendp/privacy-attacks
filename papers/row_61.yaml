@@ -1,0 +1,20 @@
+URL: https://arxiv.org/abs/2202.12219
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{tramer2022debugging,\n\
+  \    title={Debugging Differential Privacy: A Case Study for Privacy Auditing},\n\
+  \    author={Tramer, Florian and Terzis, Andreas and Steinke, Thomas and Song, Shuang\
+  \ and Jagielski, Matthew and Carlini, Nicholas},\n    journal={arXiv:2202.12219},\n\
+  \    year={2022}\n}"
+Authors: Florian Tramer, Andreas Terzis, Thomas Steinke, Shuang Song, Matthew Jagielski,
+  Nicholas Carlini
+Title: 'Debugging Differential Privacy: A Case Study for Privacy Auditing'
+Short Description: Inspired by recent advances in auditing which have been used for
+  estimating lower bounds on differentially private algorithms, shows that auditing
+  can also be used to find flaws in (purportedly) differentially private schemes.
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Information Leakage
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

@@ -1,0 +1,19 @@
+URL: https://arxiv.org/abs/2112.02918
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{boenisch2023curious,\n\
+  \  title={When the curious abandon honesty: Federated learning is not private},\n\
+  \  author={Boenisch, Franziska and Dziedzic, Adam and Schuster, Roei and Shamsabadi,\
+  \ Ali Shahin and Shumailov, Ilia and Papernot, Nicolas},\n  booktitle={2023 IEEE\
+  \ 8th European Symposium on Security and Privacy (EuroS\\&P)},\n  pages={175--199},\n\
+  \  year={2023},\n  organization={IEEE}\n}"
+Authors: Franziska Boenisch, Adam Dziedzic, Roei Schuster, Ali Shahin Shamsabadi,
+  Ilia Shumailov, Nicolas Papernot
+Title: 'When the Curious Abandon Honesty: Federated Learning Is Not Private'
+Short Description: Malicious FL input reconstruction using trap weights (model modification)
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: 'https://github.com/JonasGeiping/breaching '
+Comments: .nan
+Submitter (your name, affiliation): Dmitrii Usynin, TUM/Imperial College London

@@ -1,0 +1,22 @@
+URL: https://arxiv.org/abs/2403.03945
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@misc{dimitrov2024spearexactgradientinversionbatches,\n\
+  \      title={SPEAR:Exact Gradient Inversion of Batches in Federated Learning},\
+  \ \n      author={Dimitar I. Dimitrov and Maximilian Baader and Mark Niklas Müller\
+  \ and Martin Vechev},\n      year={2024},\n      eprint={2403.03945},\n      archivePrefix={arXiv},\n\
+  \      primaryClass={cs.LG},\n      url={https://arxiv.org/abs/2403.03945}, \n}"
+Authors: Dimitar I. Dimitrov, Maximilian Baader, Mark Niklas Müller, Martin Vechev
+Title: 'SPEAR:Exact Gradient Inversion of Batches in Federated Learning
+
+
+  '
+Short Description: 'A method for exact reconstruction of inputs from the gradients
+  obtained during federated learning for higher batch sizes. The authors provide a
+  theoretical foundation and have emperically evaluated on MNIST and CIFAR datasets. '
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Theoretical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Prahaladh Chandrahasan, Carnegie Mellon University

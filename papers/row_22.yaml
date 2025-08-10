@@ -1,0 +1,20 @@
+URL: https://arxiv.org/abs/2012.07805
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{carlini2021extracting,\n\
+  \  title={Extracting training data from large language models},\n  author={Carlini,\
+  \ Nicholas and Tramer, Florian and Wallace, Eric and Jagielski, Matthew and Herbert-Voss,\
+  \ Ariel and Lee, Katherine and Roberts, Adam and Brown, Tom and Song, Dawn and Erlingsson,\
+  \ Ulfar and others},\n  year={2021}\n}"
+Authors: Nicolas Carlini, Florian Tramèr, Eric Wallace, Matthew Jagielski, Ariel Herbert-Voss,
+  Katherine Lee, Adam Roberts, Tom Brown, Dawn Song, Úlfar Erlingsson, Alina Oprea,
+  and Colin Raffel
+Title: Extracting training data from large language models.
+Short Description: Showed how to prompt models like GPT2 to reveal specific training
+  examples
+Data Type: Text
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Data-Extraction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Applications
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Jon Ullman, Northeastern University

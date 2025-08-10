@@ -1,0 +1,21 @@
+URL: https://arxiv.org/pdf/2310.09266.pdf
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{kandpal2023user,\n\
+  \  title={User inference attacks on large language models},\n  author={Kandpal,\
+  \ Nikhil and Pillutla, Krishna and Oprea, Alina and Kairouz, Peter and Choquette-Choo,\
+  \ Christopher A and Xu, Zheng},\n  journal={arXiv preprint arXiv:2310.09266},\n\
+  \  year={2023}\n}"
+Authors: Nikhil Kandpal, Krishna Pillutla, Alina Oprea, Peter Kairouz, Christopher
+  A. Choquette-Choo, Zheng Xu
+Title: User Inference Attacks on Large Language Models
+Short Description: 'Presents an attack for inferencing the precense/absence of a user
+  in the fine-tuning set of an LLM. The adversary is not assumed to know all the fine-tuning
+  examples of a user -- only a subset (including some examples that weren''t used
+  even if the user participated in the fine-tuning stage). '
+Data Type: .nan
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Peter Kairouz, Google

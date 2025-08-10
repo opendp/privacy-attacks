@@ -1,0 +1,18 @@
+URL: https://arxiv.org/abs/2302.12580
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{van2023membership,\n\
+  \  title={Membership inference attacks against synthetic data through overfitting\
+  \ detection},\n  author={van Breugel, Boris and Sun, Hao and Qian, Zhaozhi and van\
+  \ der Schaar, Mihaela},\n  journal={AISTATS},\n  year={2023}\n}"
+Authors: Boris van Breugel, Hao Sun, Zhaozhi Qian, Mihaela van der Schaar
+Title: Membership inference attacks against synthetic data through overfitting detection
+Short Description: Proposes DOMIAS, a density-based MIA model that aims to infer membership
+  by targeting local overfitting of the generative model assuming the attacker has
+  some knowledge of the underlying data distribution.
+Data Type: Tabular
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

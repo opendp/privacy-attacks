@@ -1,0 +1,21 @@
+URL: https://arxiv.org/abs/2106.03408
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{malek2021labeldp,\n\
+  \ author = {Malek Esmaeili, Mani and Mironov, Ilya and Prasad, Karthik and Shilov,\
+  \ Igor and Tramer, Florian},\n booktitle = {Advances in Neural Information Processing\
+  \ Systems},\n editor = {M. Ranzato and A. Beygelzimer and Y. Dauphin and P.S. Liang\
+  \ and J. Wortman Vaughan},\n pages = {6934--6945},\n publisher = {Curran Associates,\
+  \ Inc.},\n title = {Antipodes of Label Differential Privacy: {PATE} and {ALIBI}},\n\
+  \ url = {https://proceedings.neurips.cc/paper_files/paper/2021/file/37ecd27608480aa3569a511a638ca74f-Paper.pdf},\n\
+  \ volume = {34},\n year = {2021}\n}\n"
+Authors: Mani Malek, Ilya Mironov, Karthik Prasad, Igor Shilov, Florian Tramèr
+Title: 'Antipodes of Label Differential Privacy: PATE and ALIBI'
+Short Description: Label-inference attack against two LabelDP mechanisms for image
+  classification
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Attribute inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: https://github.com/facebookresearch/label_dp_antipodes/tree/main/memorization_attack
+Comments: .nan
+Submitter (your name, affiliation): Ilya Mironov, Meta

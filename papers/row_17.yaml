@@ -1,0 +1,18 @@
+URL: https://petsymposium.org/popets/2023/popets-2023-0055.php
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@misc{giomi2022unifiedframeworkquantifyingprivacy,\n\
+  \      title={A Unified Framework for Quantifying Privacy Risk in Synthetic Data},\
+  \ \n      author={Matteo Giomi and Franziska Boenisch and Christoph Wehmeyer and\
+  \ Borbála Tasnádi},\n      year={2022},\n      eprint={2211.10459},\n      archivePrefix={arXiv},\n\
+  \      primaryClass={cs.CR},\n      url={https://arxiv.org/abs/2211.10459}, \n}"
+Authors: Giomi, M., Boenisch, F., Wehmeyer, C., and Tasnádi, B.
+Title: A Unified Framework for Quantifying Privacy Risk in Synthetic Data
+Short Description: Adversarial evaluation of singling out, linkability, and inference
+  risk in tabular synthetic data
+Data Type: Tabular
+Type of Release: .nan
+Threat Model --- Attacker Objective: Attribute inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: https://github.com/statice/anonymeter
+Comments: .nan
+Submitter (your name, affiliation): Matteo Giomi, Anonos

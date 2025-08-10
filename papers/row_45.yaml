@@ -1,0 +1,19 @@
+URL: https://arxiv.org/abs/2102.03314
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{oprisanu2022on,\n\
+  \  title={On utility and privacy in synthetic genomic data},\n  author={Oprisanu,\
+  \ Bristena and Ganev, Georgi and De Cristofaro, Emiliano},\n  booktitle={NDSS},\n\
+  \  year={2022}\n}"
+Authors: Bristena Oprisanu, Georgi Ganev, Emiliano De Cristofaro
+Title: On utility and privacy in synthetic genomic data
+Short Description: Provides the first evaluation of both utility and privacy protection
+  of six state-of-the-art models for generating synthetic genomic data. The experiments
+  show that no single approach to generate synthetic genomic data yields both high
+  utility and strong privacy across the board.
+Data Type: Tabular
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

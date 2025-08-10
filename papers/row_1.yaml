@@ -1,0 +1,21 @@
+URL: https://dl.acm.org/doi/10.1145/773153.773173
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): '@inproceedings{10.1145/773153.773173,
+
+  author = {Dinur, Irit and Nissim, Kobbi},
+
+  title = {Revealing information while preserving privacy},
+
+  year = {2003},
+
+  }'
+Authors: Irit Dinur and Kobbi Nissim
+Title: Revealing Information While Preserving Privacy
+Short Description: Seminal paper on the theory of data reconstruction attacks.
+Data Type: Tabular
+Type of Release: Linear-Queries
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Theoretical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Jon Ullman, Northeastern University

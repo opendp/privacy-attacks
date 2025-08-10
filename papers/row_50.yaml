@@ -1,0 +1,28 @@
+URL: https://arxiv.org/abs/2101.04535
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): '@inproceedings{nasr2021adversary,
+
+  title={Adversary instantiation: lower bounds for differentially private machine
+  learning},
+
+  author={Nasr, Milad and Songi, Shuang and Thakurta, Abhradeep and Papernot, Nicolas
+  and Carlin, Nicholas},
+
+  booktitle={IEEE S\&P},
+
+  year={2021}
+
+  }'
+Authors: Milad Nasr, Shuang Song, Abhradeep Thakurta, Nicolas Papernot, Nicholas Carlini
+Title: 'Adversary instantiation: lower bounds for differentially private machine learning'
+Short Description: Instantiates a hypothetical adversary in order to establish lower
+  bounds on the probability that the distinguishing game can be won. Uses this adversary
+  to evaluate the importance of the adversary capabilities allowed in the privacy
+  analysis of DP training algorithms.
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

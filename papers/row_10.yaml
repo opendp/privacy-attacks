@@ -1,0 +1,17 @@
+URL: https://arxiv.org/abs/2112.03570
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{carlini2022membership,\n\
+  \  title={Membership inference attacks from first principles},\n  author={Carlini,\
+  \ Nicholas and Chien, Steve and Nasr, Milad and Song, Shuang and Terzis, Andreas\
+  \ and Tramer, Florian},\n  booktitle={2022 IEEE Symposium on Security and Privacy\
+  \ (SP)},\n  pages={1897--1914},\n  year={2022},\n  organization={IEEE}\n}"
+Authors: Carlini et al.
+Title: Membership Inference Attacks From First Principles
+Short Description: Takes a step back + new attack (LIRA)
+Data Type: Tabular
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Theoretical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Yves-Alexandre de Montjoye, Imperial College

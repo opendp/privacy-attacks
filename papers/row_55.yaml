@@ -1,0 +1,21 @@
+URL: https://arxiv.org/abs/2307.01701
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{guepin2023synthetic,\n\
+  \  title={Synthetic is all you need: removing the auxiliary data assumption for\
+  \ membership inference attacks against synthetic data},\n  author={Gu{\\'e}pin,\
+  \ Florent and Meeus, Matthieu and Cretu, Ana-Maria and de Montjoye, Yves-Alexandre},\n\
+  \  journal={arXiv:2307.01701},\n  year={2023}\n}"
+Authors: Florent Guépin, Matthieu Meeus, Ana-Maria Cretu, Yves-Alexandre de Montjoye
+Title: 'Synthetic is all you need: removing the auxiliary data assumption for membership
+  inference attacks against synthetic data'
+Short Description: 'Develops new MIAs performed using only the synthetic data in three
+  different scenarios: (S1) Black-box access to the generator, (S2) only access to
+  the released synthetic dataset and (S3) a theoretical setup as upper bound for the
+  attack performance. '
+Data Type: Tabular
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Georgi Ganev, UCL

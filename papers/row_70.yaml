@@ -1,0 +1,17 @@
+URL: https://oaklandsok.github.io/papers/papernot2018.pdf
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@INPROCEEDINGS{papernot2018-sok,\n\
+  \  author={Papernot, Nicolas and McDaniel, Patrick and Sinha, Arunesh and Wellman,\
+  \ Michael P.},\n  booktitle={2018 IEEE European Symposium on Security and Privacy\
+  \ (EuroS\\&P)}, \n  title={SoK: Security and Privacy in Machine Learning}, \n  year={2018},\n\
+  \  volume={},\n  number={},\n  pages={399-414},\n}\n"
+Authors: Nicolas Papernot, Patrick McDaniel, Arunesh Sinha, Michael P. Wellman
+Title: 'SoK: Security and Privacy in Machine Learning'
+Short Description: Systematization of Knowledge of attacks on privacy of ML
+Data Type: .nan
+Type of Release: .nan
+Threat Model --- Attacker Objective: .nan
+Threat Model --- Attacker Capabilities: .nan
+Research Type: survey
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Ilya Mironov, Meta

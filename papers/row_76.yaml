@@ -1,0 +1,24 @@
+URL: https://arxiv.org/abs/2402.09477
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@misc{kazmi2024panoramiaprivacyauditingmachine,\n\
+  \      title={PANORAMIA: Privacy Auditing of Machine Learning Models without Retraining},\
+  \ \n      author={Mishaal Kazmi and Hadrien Lautraite and Alireza Akbari and Qiaoyue\
+  \ Tang and Mauricio Soroco and Tao Wang and Sébastien Gambs and Mathias Lécuyer},\n\
+  \      year={2024},\n      eprint={2402.09477},\n      archivePrefix={arXiv},\n\
+  \      primaryClass={cs.CR},\n      url={https://arxiv.org/abs/2402.09477}, \n}"
+Authors: Mishaal Kazmi, Hadrien Lautraite, Alireza Akbari, Qiaoyue Tang, Mauricio
+  Soroco, Tao Wang, Sébastien Gambs, Mathias Lécuyer
+Title: 'PANORAMIA: Privacy Auditing of Machine Learning Models without Retraining
+
+  '
+Short Description: PANORAMIA evaluates ML model privacy by training a membership inference
+  attack using generated non-member data, comparing its effectiveness against a baseline
+  classifier to measure privacy leakage without requiring real non-member data or
+  model modifications.
+Data Type: Image, Tabular, Text
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: https://github.com/ubc-systopia/panoramia-privacy-measurement
+Comments: NeurIPS 2024 poster
+Submitter (your name, affiliation): Yash Maurya, Independent Researcher

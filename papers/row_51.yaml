@@ -1,0 +1,21 @@
+URL: https://arxiv.org/abs/2403.06634
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{carlini2024stealing,\n\
+  \  title={Stealing part of a production language model},\n  author={Carlini, Nicholas\
+  \ and Paleka, Daniel and Dvijotham, Krishnamurthy Dj and Steinke, Thomas and Hayase,\
+  \ Jonathan and Cooper, A Feder and Lee, Katherine and Jagielski, Matthew and Nasr,\
+  \ Milad and Conmy, Arthur and others},\n  journal={arXiv preprint arXiv:2403.06634},\n\
+  \  year={2024}\n}"
+Authors: Nicholas Carlini, Daniel Paleka, Krishnamurthy (Dj) Dvijotham, Thomas Steinke,
+  Jonathan Hayase, A. Feder Cooper, Katherine Lee, Matthew Jagielski, Milad Nasr,
+  Arthur Conmy, Eric Wallace, David Rolnick, Florian Tramèr
+Title: Stealing Part of a Production Language Model
+Short Description: Recovers the embedding projection layer (up to symmetries) of a
+  transformer model, given typical black-box (API) access
+Data Type: Text
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Data-Extraction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Applications
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Daniil Filienko, University of Washington

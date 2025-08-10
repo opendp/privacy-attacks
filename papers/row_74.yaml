@@ -1,0 +1,20 @@
+URL: https://dl.acm.org/doi/10.1145/3658644.3690272
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{stevanoski2024querycheetah,\n\
+  \  title={QueryCheetah: Fast Automated Discovery of Attribute Inference Attacks\
+  \ Against Query-Based Systems},\n  author={Stevanoski, Bozhidar and Cretu, Ana-Maria\
+  \ and de Montjoye, Yves-Alexandre},\n  booktitle={Proceedings of the 2024 on ACM\
+  \ SIGSAC Conference on Computer and Communications Security},\n  pages={3451--3465},\n\
+  \  year={2024}\n}"
+Authors: Bozhidar Stevanoski, Ana-Maria Cretu, Yves-Alexandre de Montjoye
+Title: 'QueryCheetah: Fast Automated Discovery of Attribute Inference Attacks Against
+  Query-Based Systems'
+Short Description: A method for fast automated discovery of attacks against query-based
+  systems
+Data Type: Tabular
+Type of Release: Linear-Queries
+Threat Model --- Attacker Objective: Attribute inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: https://github.com/computationalprivacy/querycheetah
+Comments: Distinguished Paper Award at ACM CCS 2024
+Submitter (your name, affiliation): Bozhidar Stevanoski, Imperial College London

@@ -1,0 +1,22 @@
+URL: https://arxiv.org/abs/2302.03098
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@misc{andrew2024oneshotempiricalprivacyestimation,\n\
+  \      title={One-shot Empirical Privacy Estimation for Federated Learning}, \n\
+  \      author={Galen Andrew and Peter Kairouz and Sewoong Oh and Alina Oprea and\
+  \ H. Brendan McMahan and Vinith M. Suriyakumar},\n      year={2024},\n      eprint={2302.03098},\n\
+  \      archivePrefix={arXiv},\n      primaryClass={cs.LG},\n      url={https://arxiv.org/abs/2302.03098},\
+  \ \n}"
+Authors: Galen Andrew, Peter Kairouz, Sewoong Oh, Alina Oprea, H. Brendan McMahan,
+  Vinith M. Suriyakumar
+Title: One-shot Empirical Privacy Estimation for Federated Learning
+Short Description: Introduces a one-shot privacy estimation technique that injects
+  random canary clients during federated learning to empirically measure ε-differential
+  privacy guarantees by performing membership inference tests using cosine similarities
+  between canary updates and model parameters.
+Data Type: Image
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Yash Maurya, Independent Researcher

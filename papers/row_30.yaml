@@ -1,0 +1,20 @@
+URL: https://arxiv.org/abs/2111.09679
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{ye2022enhanced,\n\
+  \  title={Enhanced membership inference attacks against machine learning models},\n\
+  \  author={Ye, Jiayuan and Maddi, Aadyaa and Murakonda, Sasi Kumar and Bindschaedler,\
+  \ Vincent and Shokri, Reza},\n  booktitle={Proceedings of the 2022 ACM SIGSAC Conference\
+  \ on Computer and Communications Security},\n  pages={3093--3106},\n  year={2022}\n\
+  }"
+Authors: Jiayuan Ye, Aadyaa Maddi, Sasi Kumar Murakonda, Vincent Bindschaedler, Reza
+  Shokri
+Title: Enhanced Membership Inference Attacks against Machine Learning Models
+Short Description: Framework for MIA based on approximate LRT. Theory behind general
+  class of attacks + a few instantiations.
+Data Type: Tabular
+Type of Release: Predictive-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): .nan

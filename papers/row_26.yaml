@@ -1,0 +1,19 @@
+URL: https://arxiv.org/pdf/2112.05307.pdf
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{jin2022we,\n\
+  \  title={Are we there yet? timing and floating-point attacks on differential privacy\
+  \ systems},\n  author={Jin, Jiankai and McMurtry, Eleanor and Rubinstein, Benjamin\
+  \ IP and Ohrimenko, Olga},\n  booktitle={2022 IEEE Symposium on Security and Privacy\
+  \ (SP)},\n  pages={473--488},\n  year={2022},\n  organization={IEEE}\n}"
+Authors: Jin, McMurtry, Rubinstein, Ohrimenko
+Title: 'Are We There Yet? Timing and Floating-Point Attacks on Differential Privacy
+  Systems '
+Short Description: Attacks on DP implementations that use floating-point arithmetic;
+  timing side channels on discrete samplers
+Data Type: .nan
+Type of Release: .nan
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Applications
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Zachary Ratliff, Harvard + OpenDP

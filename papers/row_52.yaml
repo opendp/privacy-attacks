@@ -1,0 +1,17 @@
+URL: https://arxiv.org/pdf/2011.07018.pdf
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{stadler2022synthetic,\n\
+  \  title={Synthetic data--anonymisation groundhog day},\n  author={Stadler, Theresa\
+  \ and Oprisanu, Bristena and Troncoso, Carmela},\n  booktitle={31st USENIX Security\
+  \ Symposium (USENIX Security 22)},\n  pages={1451--1468},\n  year={2022}\n}"
+Authors: Stadler et al.
+Title: Synthetic Data - Anonymisation Groundhog Day
+Short Description: Black-box attack on synthetic data and quantitative evaluation
+  of privacy of synthetic data
+Data Type: Tabular
+Type of Release: Generative-Model
+Threat Model --- Attacker Objective: Membership-Inference
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Yves-Alexandre de Montjoye, Imperial College

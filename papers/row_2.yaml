@@ -1,0 +1,16 @@
+URL: https://arxiv.org/abs/1810.05692
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{cohen2018linear,\n\
+  \  title={Linear program reconstruction in practice},\n  author={Cohen, Aloni and\
+  \ Nissim, Kobbi},\n  year={2018}\n}"
+Authors: Aloni Cohen and Kobbi Nissim
+Title: Linear program reconstruction in practice.
+Short Description: Implemented linear reconstruction attacks against a production
+  private query system called Diffix
+Data Type: Tabular
+Type of Release: Linear-Queries
+Threat Model --- Attacker Objective: Reconstruction
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Applications
+Links to Artifacts: .nan
+Comments: .nan
+Submitter (your name, affiliation): Jon Ullman, Northeastern University
