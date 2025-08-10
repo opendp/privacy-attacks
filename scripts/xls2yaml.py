@@ -4,6 +4,7 @@ from pathlib import Path
 
 import pandas as pd
 import yaml
+import re 
 
 
 def convert_xls_to_yaml(input_path: Path, output_dir: Path) -> None:
@@ -14,15 +15,24 @@ def convert_xls_to_yaml(input_path: Path, output_dir: Path) -> None:
     for idx, row in df.iterrows():
 
         record = {col: row[col] for col in columns}
+        print(df.columns)
 
-        filename = str(record.get("id")) if "id" in df.columns else f"row_{idx + 1}"
+        if "Title" in df.columns:
+            title_val = str(record.get("Title", "")).strip()
+            title_processed = title_val.lower().replace(" ", "_")
+            filename = re.sub(r"[^a-z0-9_]", "", title_processed)
+            print(filename)
+        elif "ID" in df.columns:
+            filename = str(record.get("ID"))
+        else:
+            filename = f"row_{idx + 1}"
         with (output_dir / f"{filename}.yaml").open("w", encoding="utf-8") as fh:
             yaml.safe_dump(
                 record,
                 fh,
                 sort_keys=False,
                 allow_unicode=True,
-                default_flow_style=False,   # block style: one key per line
+                default_flow_style=False,
             )
 
     print(f"Wrote {len(df)} YAML files to {output_dir}")
