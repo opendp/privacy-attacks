@@ -20,7 +20,39 @@ def convert_xls_to_yaml(input_path: Path, output_dir: Path) -> None:
         if "Title" in df.columns:
             title_val = str(record.get("Title", "")).strip()
             title_processed = title_val.lower().replace(" ", "_")
-            filename = re.sub(r"[^a-z0-9_]", "", title_processed)
+            title_processed = re.sub(r"[^a-z0-9_]", "", title_processed)
+
+            author_col = None
+            if "Author" in df.columns:
+                author_col = "Author"
+            elif "Authors" in df.columns:
+                author_col = "Authors"
+
+            author_prefix = ""
+            if author_col:
+                authors_val = str(record.get(author_col, "")).strip()
+                if authors_val:
+                    temp = authors_val
+                    for sep in [";", " and ", " & ", " et al.", " et al"]:
+                        temp = temp.replace(sep, ",")
+                    author_list = [a.strip() for a in temp.split(",") if a.strip()]
+                    if author_list:
+                        first_author = author_list[0]
+                        if "," in first_author:
+                            last_name = first_author.split(",")[0].strip()
+                        else:
+                            last_name = first_author.split()[-1].strip()
+                        last_name_processed = last_name.lower().replace(" ", "_")
+                        last_name_processed = re.sub(r"[^a-z0-9_]", "", last_name_processed)
+                        author_prefix = last_name_processed
+                        if len(author_list) > 1:
+                            author_prefix += "_et_al"
+
+            filename_parts = []
+            if author_prefix:
+                filename_parts.append(author_prefix)
+            filename_parts.append(title_processed)
+            filename = "_".join(filename_parts)
             print(filename)
         elif "ID" in df.columns:
             filename = str(record.get("ID"))
