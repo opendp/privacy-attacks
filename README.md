@@ -39,21 +39,21 @@ Each paper in the repository is cataloged with the following fields. Fields mark
 -   **Authors**: The paper's authors.
 -   **Title**: The paper's full title.
 -   **Short Description**: A brief, one-or-two-sentence summary of the paper's contribution.
--   **\*Type of Data (Inputs)**: The kind of input data the attack targets. Common values include:
+-   **Type of Data (Inputs)**: The kind of input data the attack targets. Common values include:
     -   `Tabular`: Data in a table format with rows and columns.
     -   `Image`: Pixel data, such as from datasets like ImageNet or CIFAR-10.
     -   `Text`: Sequences of characters or tokens, often represented numerically.
--   **\*Type of Data Release (Outputs)**: The form of output the privacy mechanism produces from the dataset. Common values include:
+-   **Type of Data Release (Outputs)**: The form of output the privacy mechanism produces from the dataset. Common values include:
     -   `Counts and Linear Queries`: Statistical summaries of a dataset (e.g., "How many elements of this dataset are voting-age, hispanic, males living in Massachusetts?").
     -   `Predictive Model`: A model trained to map inputs to outputs, such as linear regression or neural networks.
     -   `Generative Model`: A model that produces new synthetic data resembling the training data, such as LLMs or diffusion models.
--   **\*Threat Model --- Attacker Objectives**: What the attacker aims to achieve. Common values include:
+-   **Threat Model --- Attacker Objectives**: What the attacker aims to achieve. Common values include:
     -   `Data Reconstruction`
     -   `Membership Inference`
     -   `Data Extraction`
     -   `Attribute Inference`
--   **\*Threat Model --- Attacker Capabilities**: A free-text description of the attacker's assumed knowledge or abilities (e.g., access to a subset of data, ability to issue queries).
--   **\*Research Type**: The nature of the research contribution. Common values include:
+-   **Threat Model --- Attacker Capabilities**: A free-text description of the attacker's assumed knowledge or abilities (e.g., access to a subset of data, ability to issue queries).
+-   **Research Type**: The nature of the research contribution. Common values include:
     -   `Theoretical`
     -   `Empirical`
     -   `Applications`
