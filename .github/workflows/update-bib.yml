@@ -21,7 +21,7 @@ jobs:
       run: pip install PyYAML
 
     - name: Run BibTeX extraction
-      run: python scripts/yml2bib.py
+      run: python scripts/yaml2bib.py
 
     - name: Commit changes
       run: |
