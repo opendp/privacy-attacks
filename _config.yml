@@ -2,7 +2,7 @@ title: Privacy Attacks Repository
 email: info@opendp.org
 description: >-
   This resource aims to document existing attacks on output privacy.
-baseurl: "/test-attacks-repository-ui" # the subpath of your site, e.g. /blog
+baseurl: "/privacy-attacks" # the subpath of your site, e.g. /blog
 url: "https://opendp.github.io"
 owner: OpenDP
 
