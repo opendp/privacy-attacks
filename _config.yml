@@ -3,7 +3,7 @@ email: info@opendp.org
 description: >-
   This resource aims to document existing attacks on output privacy.
 baseurl: "/test-attacks-repository-ui" # the subpath of your site, e.g. /blog
-url: "https://tudorcebere.github.io"
+url: https://opendp.github.io"
 owner: OpenDP
 
 # Build settings
