@@ -10,6 +10,7 @@ owner: OpenDP
 theme: minima
 plugins:
   - jekyll-feed
+data_dir: attacks
 
 # Collections
 collections:

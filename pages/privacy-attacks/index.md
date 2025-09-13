@@ -9,7 +9,7 @@ permalink: /privacy-attacks/
 <div class="home-page privacy-attacks-page">
 <div class="main-content" markdown="1">
 
-{% assign attacks = site.data.attacks | default: site.data %}
+{% assign attacks = site.data.attacks | default: site.data.privacy_attacks | default: site.data %}
 
 {% if page.icon %}
     <i class="fa-solid fa-2xl {{ page.icon }} page-icon"></i>
