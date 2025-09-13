@@ -1,3 +1,71 @@
-data_dir: attacks
+title: Privacy Attacks Repository
+email: info@opendp.org
+description: >-
+  This resource aims to document existing attacks on output privacy.
+baseurl: "/test-attacks-repository-ui" # the subpath of your site, e.g. /blog
+url: "https://tudorcebere.github.io"
+owner: OpenDP
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Collections
+collections:
+  navigation:
+    output: false
+  bibliography:
+    output: false
+
+# Include pages directory in processing
 include:
-  - pages 
+  - pages
+
+# Header navigation
+header_pages:
+  - pages/index.md
+
+markdown: kramdown # The default: passes <script> tags through verbatim.
+
+# Defaults for pages
+defaults:
+  - scope:
+      path: "pages"
+    values:
+      layout: "docs"
+  - scope:
+      path: "pages/background"
+    values:
+      layout: "docs"
+      permalink: /:basename/
+  - scope:
+      path: "pages/concepts"
+    values:
+      layout: "docs"
+      permalink: /concepts/:basename/
+  - scope:
+      path: "pages/deployments-registry"
+    values:
+      layout: "main"
+      permalink: /deployments-registry/:basename/
+  - scope:
+      path: "pages/further-information"
+    values:
+      layout: "docs"
+      permalink: /further-information/:basename/
+  - scope:
+      path: "pages/privacy"
+    values:
+      layout: "docs"
+      permalink: /privacy/:basename/
+
+exclude:
+  - eslint.config.mjs
+  - node_modules/
+  - package-lock.json
+  - package.json
+  - vendor
+  - tests
+  - .venv
+  - test-results/
