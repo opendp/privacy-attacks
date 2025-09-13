@@ -1,0 +1,19 @@
+type: object
+additionalProperties: false
+required:
+  - Title
+properties:
+  URL: {}
+  "BibTex (Please add a bibtex entry for this paper to facilitate easy citations)": {}
+  Authors: {}
+  Title: {type: string}
+  "Publication Year": {}
+  "Short Description": {}
+  "Data Type": {}
+  "Type of Release": {}
+  "Threat Model --- Attacker Objective": {}
+  "Threat Model --- Attacker Capabilities": {}
+  "Research Type": {}
+  "Links to Artifacts": {}
+  Comments: {}
+  "Submitter (your name, affiliation)": {} 

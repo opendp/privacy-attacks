@@ -1,0 +1,376 @@
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (!window.attacks && !document.getElementById('attacks-data')) {
+        try {
+            const rows = Array.from(document.querySelectorAll('#attacks-table tbody tr'));
+            window.attacks = rows.map(row => {
+                const cells = row.querySelectorAll('td');
+                return {
+                    'Title': (cells[0]?.innerText || '').trim(),
+                    'Authors': (cells[1]?.innerText || '').trim(),
+                    'Publication Year': (cells[2]?.innerText || '').trim(),
+                    'Data Type': (cells[3]?.innerText || '').trim(),
+                    'Type of Release': (cells[4]?.innerText || '').trim(),
+                    'Threat Model --- Attacker Objective': (cells[5]?.innerText || '').trim(),
+                    'Research Type': (cells[6]?.innerText || '').trim(),
+                };
+            });
+        } catch (e) {
+            window.attacks = [];
+        }
+    }
+});
+</script>
+<script>
+// Backward compat: keep the expected variable name inside this module scope
+const attacksData = window.attacks || [];
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const table = document.getElementById('attacks-table');
+    const tbody = table.querySelector('tbody');
+
+    function normalizeValue(value) {
+        if (value === null || value === undefined) {
+            return '';
+        }
+        return value.toString().trim().toLowerCase();
+    }
+
+    const searchFilterElement = document.querySelector('#search-filter');
+    const filterElements = {
+        visibleFilters: document.querySelector('#visible-filters'),
+        datatype: document.querySelector('#datatype-filter'),
+        release: document.querySelector('#release-filter'),
+        objective: document.querySelector('#objective-filter'),
+        researchtype: document.querySelector('#researchtype-filter'),
+        year: document.querySelector('#year-filter')
+    };
+
+    const missingElements = Object.entries(filterElements)
+        .filter(([key, element]) => !element)
+        .map(([key]) => key);
+    if (!searchFilterElement || missingElements.length > 0) {
+        return;
+    }
+
+    const visibleFiltersGroup = filterElements.visibleFilters.parentElement;
+    const datatypeGroup = filterElements.datatype.parentElement;
+    const releaseGroup = filterElements.release.parentElement;
+    const objectiveGroup = filterElements.objective.parentElement;
+    const researchtypeGroup = filterElements.researchtype.parentElement;
+    const yearGroup = filterElements.year.parentElement;
+
+    class CustomSelect {
+        constructor(container, placeholder = 'Select...') {
+            this.container = container;
+            this.placeholder = placeholder;
+            this.value = '';
+            this.options = [];
+            this.isOpen = false;
+            this.onChange = null;
+            this.create();
+            this.bind();
+        }
+        create() {
+            this.container.innerHTML = `
+                <div class="custom-select">
+                    <div class="custom-select-trigger">
+                        <span class="custom-select-value">${this.placeholder}</span>
+                    </div>
+                    <div class="custom-select-options">
+                        <div class="custom-select-option" data-value="">${this.placeholder}</div>
+                    </div>
+                </div>
+            `;
+            this.trigger = this.container.querySelector('.custom-select-trigger');
+            this.valueElement = this.container.querySelector('.custom-select-value');
+            this.optionsContainer = this.container.querySelector('.custom-select-options');
+        }
+        bind() {
+            this.trigger.addEventListener('click', () => this.toggle());
+            document.addEventListener('click', (e) => { if (!this.container.contains(e.target)) this.close(); });
+            this.optionsContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('custom-select-option')) {
+                    this.selectOption(e.target.dataset.value, e.target.textContent);
+                }
+            });
+        }
+        toggle() { this.isOpen ? this.close() : this.open(); }
+        open() { this.isOpen = true; this.container.querySelector('.custom-select').classList.add('open'); }
+        close() { this.isOpen = false; this.container.querySelector('.custom-select').classList.remove('open'); }
+        selectOption(value, text) {
+            this.value = value; this.valueElement.textContent = text; this.close(); if (this.onChange) this.onChange(value);
+        }
+        updateOptions(options) {
+            this.options = options;
+            this.optionsContainer.innerHTML = `<div class="custom-select-option" data-value="">${this.placeholder}</div>`;
+            options.forEach(option => {
+                const el = document.createElement('div'); el.className = 'custom-select-option'; el.dataset.value = option; el.textContent = option; this.optionsContainer.appendChild(el);
+            });
+        }
+        setValue(value) { this.value = value; this.valueElement.textContent = value === '' ? this.placeholder : value; }
+        clearSelection() { this.setValue(''); }
+    }
+
+    class CustomMultiSelect {
+        constructor(container, placeholder = 'Select...') {
+            this.container = container; this.placeholder = placeholder; this.values = []; this.options = []; this.isOpen = false; this.onChange = null;
+            this.create(); this.bind();
+        }
+        create() {
+            this.container.innerHTML = `
+                <div class="custom-multiselect">
+                    <div class="custom-multiselect-trigger">
+                        <div class="custom-multiselect-values"><span class="custom-multiselect-placeholder">${this.placeholder}</span></div>
+                    </div>
+                    <div class="custom-multiselect-options"></div>
+                </div>`;
+            this.trigger = this.container.querySelector('.custom-multiselect-trigger');
+            this.valuesContainer = this.container.querySelector('.custom-multiselect-values');
+            this.optionsContainer = this.container.querySelector('.custom-multiselect-options');
+            this.placeholder_element = this.container.querySelector('.custom-multiselect-placeholder');
+        }
+        bind() {
+            this.trigger.addEventListener('click', () => this.toggle());
+            document.addEventListener('click', (e) => { if (!this.container.contains(e.target)) this.close(); });
+            this.optionsContainer.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const optionEl = e.target.closest('.custom-multiselect-option');
+                if (optionEl) this.toggleOption(optionEl.dataset.value);
+            });
+        }
+        toggle() { this.isOpen ? this.close() : this.open(); }
+        open() { this.isOpen = true; this.container.querySelector('.custom-multiselect').classList.add('open'); }
+        close() { this.isOpen = false; this.container.querySelector('.custom-multiselect').classList.remove('open'); }
+        toggleOption(value) {
+            const i = this.values.indexOf(value); if (i > -1) this.values.splice(i, 1); else this.values.push(value);
+            this.updateDisplay(); this.updateOptionStates(); if (this.onChange) this.onChange(this.values);
+        }
+        updateDisplay() {
+            if (this.values.length === 0) {
+                this.valuesContainer.innerHTML = `<span class="custom-multiselect-placeholder">${this.placeholder}</span>`;
+            } else {
+                this.valuesContainer.innerHTML = `<span class="custom-multiselect-count">${this.placeholder} ${this.values.length} selected</span>`;
+            }
+        }
+        updateOptionStates() {
+            this.optionsContainer.querySelectorAll('.custom-multiselect-option').forEach(option => {
+                if (this.values.includes(option.dataset.value)) option.classList.add('selected'); else option.classList.remove('selected');
+            });
+        }
+        updateOptions(options) {
+            this.options = options; this.optionsContainer.innerHTML = '';
+            options.forEach(option => {
+                const el = document.createElement('div'); el.className = 'custom-multiselect-option'; el.dataset.value = option; el.innerHTML = `<span class="custom-multiselect-text">${option}</span>`; this.optionsContainer.appendChild(el);
+            });
+            this.updateOptionStates();
+        }
+        clearSelection() { this.values = []; this.updateDisplay(); this.updateOptionStates(); }
+        getValues() { return this.values; }
+    }
+
+    const visibleFiltersMultiSelect = new CustomMultiSelect(visibleFiltersGroup, 'Filters');
+    const datatypeSelect = new CustomSelect(datatypeGroup, 'Data Types');
+    const releaseMultiSelect = new CustomMultiSelect(releaseGroup, 'Release Types');
+    const objectiveMultiSelect = new CustomMultiSelect(objectiveGroup, 'Objectives');
+    const researchtypeMultiSelect = new CustomMultiSelect(researchtypeGroup, 'Research Types');
+    const yearMultiSelect = new CustomMultiSelect(yearGroup, 'Years');
+
+    Object.values(filterElements).forEach(element => { element.style.display = 'none'; });
+
+    function initializeFilterVisibilityOptions() {
+        const filterOptions = [
+            'Data Type (Inputs)',
+            'Type of Data Release (Outputs)',
+            'Attacker Objectives',
+            'Research Type',
+            'Year'
+        ];
+        visibleFiltersMultiSelect.updateOptions(filterOptions);
+    }
+
+    function handleFilterVisibilityChange(visibleFilters) {
+        const filterGroups = {
+            'Data Type (Inputs)': document.getElementById('datatype-filter-group'),
+            'Type of Data Release (Outputs)': document.getElementById('release-filter-group'),
+            'Attacker Objectives': document.getElementById('objective-filter-group'),
+            'Research Type': document.getElementById('researchtype-filter-group'),
+            'Year': document.getElementById('year-filter-group')
+        };
+        const filterComponents = {
+            'Data Type (Inputs)': datatypeSelect,
+            'Type of Data Release (Outputs)': releaseMultiSelect,
+            'Attacker Objectives': objectiveMultiSelect,
+            'Research Type': researchtypeMultiSelect,
+            'Year': yearMultiSelect
+        };
+        Object.entries(filterGroups).forEach(([name, group]) => {
+            if (!group) return;
+            if (visibleFilters.includes(name)) {
+                group.style.display = '';
+            } else {
+                group.style.display = 'none';
+                const component = filterComponents[name];
+                if (component) {
+                    if (component.clearSelection) component.clearSelection(); else if (component.setValue) component.setValue('');
+                }
+            }
+        });
+        populateFilters();
+        filterTable();
+    }
+
+    function performSearch(searchTerm) {
+        if (!searchTerm || searchTerm.trim() === '') return true;
+        searchTerm = searchTerm.toLowerCase();
+        return function(a) {
+            const fields = [
+                a.Title,
+                a.Authors,
+                a['Short Description'],
+                a['Threat Model --- Attacker Capabilities'],
+                a.Comments
+            ];
+            return fields.some(field => field && field.toString().toLowerCase().includes(searchTerm));
+        };
+    }
+
+    function populateFilters() {
+        const selectedDatatype = datatypeSelect.value;
+        const selectedReleases = releaseMultiSelect.getValues();
+        const selectedObjectives = objectiveMultiSelect.getValues();
+        const selectedResearchTypes = researchtypeMultiSelect.getValues();
+        const selectedYears = yearMultiSelect.getValues();
+
+        const datatypeSet = new Map();
+        attacksData.forEach(a => { if (a['Data Type']) { const n = normalizeValue(a['Data Type']); if (!datatypeSet.has(n)) datatypeSet.set(n, a['Data Type']); }});
+        const releaseSet = new Map();
+        attacksData.filter(a => !selectedDatatype || normalizeValue(a['Data Type']) === normalizeValue(selectedDatatype))
+                   .forEach(a => { if (a['Type of Release']) { const n = normalizeValue(a['Type of Release']); if (!releaseSet.has(n)) releaseSet.set(n, a['Type of Release']); }});
+        const objectiveSet = new Map();
+        attacksData.filter(a => (!selectedDatatype || normalizeValue(a['Data Type']) === normalizeValue(selectedDatatype)) && (selectedReleases.length === 0 || selectedReleases.some(v => normalizeValue(v) === normalizeValue(a['Type of Release']))) )
+                   .forEach(a => { if (a['Threat Model --- Attacker Objective']) { const n = normalizeValue(a['Threat Model --- Attacker Objective']); if (!objectiveSet.has(n)) objectiveSet.set(n, a['Threat Model --- Attacker Objective']); }});
+        const researchtypeSet = new Map();
+        attacksData.filter(a => {
+            const matchDatatype = !selectedDatatype || normalizeValue(a['Data Type']) === normalizeValue(selectedDatatype);
+            const matchRelease = selectedReleases.length === 0 || selectedReleases.some(v => normalizeValue(v) === normalizeValue(a['Type of Release']));
+            const matchObjective = selectedObjectives.length === 0 || selectedObjectives.some(v => normalizeValue(v) === normalizeValue(a['Threat Model --- Attacker Objective']));
+            return matchDatatype && matchRelease && matchObjective;
+        }).forEach(a => { if (a['Research Type']) { const n = normalizeValue(a['Research Type']); if (!researchtypeSet.has(n)) researchtypeSet.set(n, a['Research Type']); }});
+        const yearSet = new Map();
+        attacksData.filter(a => {
+            const matchDatatype = !selectedDatatype || normalizeValue(a['Data Type']) === normalizeValue(selectedDatatype);
+            const matchRelease = selectedReleases.length === 0 || selectedReleases.some(v => normalizeValue(v) === normalizeValue(a['Type of Release']));
+            const matchObjective = selectedObjectives.length === 0 || selectedObjectives.some(v => normalizeValue(v) === normalizeValue(a['Threat Model --- Attacker Objective']));
+            const matchResearch = selectedResearchTypes.length === 0 || selectedResearchTypes.some(v => normalizeValue(v) === normalizeValue(a['Research Type']));
+            return matchDatatype && matchRelease && matchObjective && matchResearch;
+        }).forEach(a => { if (a['Publication Year']) { const y = a['Publication Year'].toString(); const n = normalizeValue(y); if (!yearSet.has(n)) yearSet.set(n, y); }});
+
+        datatypeSelect.updateOptions(Array.from(datatypeSet.values()).sort());
+        releaseMultiSelect.updateOptions(Array.from(releaseSet.values()).sort());
+        objectiveMultiSelect.updateOptions(Array.from(objectiveSet.values()).sort());
+        researchtypeMultiSelect.updateOptions(Array.from(researchtypeSet.values()).sort());
+        yearMultiSelect.updateOptions(Array.from(yearSet.values()).sort((a, b) => b - a));
+    }
+
+    function filterTable() {
+        const searchFn = performSearch(searchFilterElement.value);
+        const selectedDatatype = datatypeSelect.value;
+        const selectedReleases = releaseMultiSelect.getValues();
+        const selectedObjectives = objectiveMultiSelect.getValues();
+        const selectedResearchTypes = researchtypeMultiSelect.getValues();
+        const selectedYears = yearMultiSelect.getValues();
+
+        const rows = tbody.querySelectorAll('.attack-row');
+        rows.forEach((row) => {
+            const dataIndex = parseInt(row.dataset.index, 10);
+            const a = attacksData[dataIndex] || {};
+            const matchesSearch = searchFn === true || searchFn(a);
+            const matchesDatatype = selectedDatatype === '' || normalizeValue(a['Data Type']) === normalizeValue(selectedDatatype);
+            const matchesRelease = selectedReleases.length === 0 || selectedReleases.some(v => normalizeValue(v) === normalizeValue(a['Type of Release']));
+            const matchesObjective = selectedObjectives.length === 0 || selectedObjectives.some(v => normalizeValue(v) === normalizeValue(a['Threat Model --- Attacker Objective']));
+            const matchesResearch = selectedResearchTypes.length === 0 || selectedResearchTypes.some(v => normalizeValue(v) === normalizeValue(a['Research Type']));
+            const matchesYear = selectedYears.length === 0 || selectedYears.some(v => normalizeValue(v) === normalizeValue((a['Publication Year'] || '').toString()));
+            row.style.display = (matchesSearch && matchesDatatype && matchesRelease && matchesObjective && matchesResearch && matchesYear) ? '' : 'none';
+        });
+    }
+
+    function clearFilters() {
+        searchFilterElement.value = '';
+        visibleFiltersMultiSelect.clearSelection();
+        datatypeSelect.setValue('');
+        releaseMultiSelect.clearSelection();
+        objectiveMultiSelect.clearSelection();
+        researchtypeMultiSelect.clearSelection();
+        yearMultiSelect.clearSelection();
+        handleFilterVisibilityChange([]);
+        populateFilters();
+        filterTable();
+    }
+
+    // Sorting support
+    let currentSort = { colIndex: null, direction: 'asc' };
+
+    function getCellValue(row, colIndex) {
+        const cell = row.querySelectorAll('td')[colIndex];
+        if (!cell) return '';
+        const text = cell.innerText || cell.textContent || '';
+        if (colIndex === 2) { // Year column numeric sort
+            const num = parseFloat(text.trim());
+            return isNaN(num) ? Number.NEGATIVE_INFINITY : num;
+        }
+        return text.trim().toLowerCase();
+    }
+
+    function sortTable(colIndex, direction) {
+        const rows = Array.from(tbody.querySelectorAll('.attack-row'));
+        rows.sort((a, b) => {
+            const va = getCellValue(a, colIndex);
+            const vb = getCellValue(b, colIndex);
+            if (colIndex === 2) {
+                return direction === 'asc' ? va - vb : vb - va;
+            }
+            if (va < vb) return direction === 'asc' ? -1 : 1;
+            if (va > vb) return direction === 'asc' ? 1 : -1;
+            return 0;
+        });
+        rows.forEach(r => tbody.appendChild(r));
+    }
+
+    function setHeaderSortIndicators(headers, activeIdx, direction) {
+        headers.forEach((th, i) => {
+            th.removeAttribute('aria-sort');
+            if (i === activeIdx) th.setAttribute('aria-sort', direction === 'asc' ? 'ascending' : 'descending');
+        });
+    }
+
+    const headerCells = table.querySelectorAll('thead th');
+    headerCells.forEach((th, idx) => {
+        th.style.cursor = 'pointer';
+        th.addEventListener('click', () => {
+            if (currentSort.colIndex === idx) {
+                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.colIndex = idx;
+                currentSort.direction = (idx === 2) ? 'desc' : 'asc';
+            }
+            sortTable(currentSort.colIndex, currentSort.direction);
+            setHeaderSortIndicators(headerCells, currentSort.colIndex, currentSort.direction);
+        });
+    });
+
+    searchFilterElement.addEventListener('input', filterTable);
+    visibleFiltersMultiSelect.onChange = handleFilterVisibilityChange;
+    datatypeSelect.onChange = () => { populateFilters(); filterTable(); };
+    releaseMultiSelect.onChange = () => { populateFilters(); filterTable(); };
+    objectiveMultiSelect.onChange = () => { populateFilters(); filterTable(); };
+    researchtypeMultiSelect.onChange = () => { populateFilters(); filterTable(); };
+    yearMultiSelect.onChange = () => { populateFilters(); filterTable(); };
+
+    document.getElementById('clear-filters').addEventListener('click', clearFilters);
+
+    initializeFilterVisibilityOptions();
+    populateFilters();
+});
+</script> 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='{{ page.lang | default: site.lang | default: "en" }}'>
+
+  {%- include head.html -%}
+
+  <body class="docs-layout">    
+    <main class="page" aria-label="Content">
+
+        {%- include sidebar.html -%}
+        
+        <div class="docs-page">
+            <!-- Header -->
+            <header class="header">
+                <!-- <a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a> -->
+            
+                <nav class="site-nav">
+                    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+                    <label for="nav-trigger">
+                        <span class="menu-icon" onclick="toggleMobileSidebar()">
+                            <svg viewBox="0 0 18 15" width="18px" height="15px">
+                                <path
+                                    d="m18,1.484c0,0.82-0.665,1.484-1.484,1.484h-15.032c-0.82,0-1.484-0.665-1.484-1.484s0.665-1.484,1.484-1.484h15.032c0.82,0,1.484,0.665,1.484,1.484zm0,5.16c0,0.82-0.665,1.484-1.484,1.484h-15.032c-0.82,0-1.484-0.665-1.484-1.484s0.665-1.484,1.484-1.484h15.032c0.82,0,1.484,0.665,1.484,1.484zm0,5.16c0,0.82-0.665,1.484-1.484,1.484h-15.032c-0.82,0-1.484-0.665-1.484-1.484s0.665-1.484,1.484-1.484h15.032c0.82,0,1.484,0.665,1.484,1.484z" />
+                            </svg>
+                        </span>
+                    </label>
+            
+                    <div class="trigger">
+                        <!-- <a class="page-link" href="{{ '/' | relative_url }}">Home</a> -->
+                        <!-- <a class="page-link" href="{{ "/overview" | relative_url }}">Documentation</a> -->
+                    </div>
+                </nav>
+            </header>
+
+            <div class="wrapper">
+                <!-- Main content -->
+                <div class="docs-wrapper">
+                    <div class="docs-content">
+                        <article class="post">
+                            {% if page.icon %}
+                                <i class="fa-solid fa-2xl {{ page.icon }} page-icon"></i>
+                            {% endif %}
+                            {% if page.title %}
+                            <header class="post-header">
+                                <h1 class="post-title">
+                                    {{ page.title | escape }}
+                                </h1>
+                            </header>
+                            {% endif %}
+            
+                            <div class="post-content">
+                                {{ content }}
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {%- include footer.html -%}
+
+    {%- include sidebar-script.html -%}
+
+  </body>
+
+</html>

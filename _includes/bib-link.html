@@ -1,0 +1,72 @@
+{% comment %}
+This component can be used with either a BibTeX key or a number:
+{% include bib-link.html key="census_pseo" %}
+{% include bib-link.html number="22" %}
+{% endcomment %}
+
+{% assign bib_entry = null %}
+{% assign display_number = null %}
+
+{% comment %} Access bibliography data from the collection {% endcomment %}
+{% assign bib_collection = site.bibliography | first %}
+{% if bib_collection and bib_collection.bibliography %}
+  {% assign bibliography_data = bib_collection.bibliography %}
+  
+  {% if include.key %}
+    {% comment %} Find entry by key {% endcomment %}
+    {% for entry in bibliography_data %}
+      {% if entry.key == include.key %}
+        {% assign bib_entry = entry %}
+        {% assign display_number = entry.order %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% elsif include.number %}
+    {% comment %} Find entry by number {% endcomment %}
+    {% assign target_order = include.number%}
+    {% for entry in bibliography_data %}
+      {% if entry.order == target_order %}
+        {% assign bib_entry = entry %}
+        {% assign display_number = include.number %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endif %}
+
+{% if bib_entry and bib_entry.url %}
+<div class="bib-link-wrapper">
+    <a href="{{ bib_entry.url }}" 
+        class="bib-link" 
+        target="_blank" 
+        rel="noopener noreferrer">
+    [{{ display_number }}]
+    </a>
+    <div class="bib-tooltip-wrapper">
+        <div class="bib-tooltip">
+            <div class="bib-tooltip-content">
+                {% if bib_entry.title %}
+                <div class="bib-title">
+                    <div>{{ bib_entry.title }}</div>
+                    <a href="{{ bib_entry.url }}" 
+                       class="bib-title-arrow" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       title="Open in new tab">↗</a>
+                </div>
+                {% endif %}
+                {% if bib_entry.description %}
+                <div class="bib-description">{{ bib_entry.description }}</div>
+                {% endif %}
+                {% if bib_entry.author %}
+                <div class="bib-author"> - {{ bib_entry.author }}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+    <span class="bib-link-error" title="Bibliography entry not found">
+    [{% if include.key %}{{ include.key }}{% else %}{{ include.number }}{% endif %}]
+    </span>
+{% endif %}

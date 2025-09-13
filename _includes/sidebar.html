@@ -1,0 +1,72 @@
+<!-- Sidebar -->
+<div class="docs-sidebar">
+    <div class="toggler" onclick="toggleSidebar()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 12L6 8L10 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </div>
+    <div class="site-logo">
+        <a href="{{ '/' | relative_url }}" aria-label="Home">
+            <img src="{{ '/assets/images/opendp-logo.png' | relative_url }}" alt="OpenDP" />
+        </a>
+    </div>
+    <nav class="docs-nav">
+        <div class="sidebar-section">
+            <a href="{{ '/' | relative_url }}" class="sidebar-toggle {% if page.url == '/' %}active{% endif %}">
+                <i class="fa-regular fa-house fa-1x"></i>
+                <span class="sidebar-section-title">Home</span>
+            </a>
+        </div>
+        
+        {% assign nav_doc = site.navigation | first %}
+        {% for section in nav_doc.navigation %}
+        {% assign section_is_active = false %}
+        {% if section.pages %}
+            {% for nav_page in section.pages %}
+                {% if page.url contains nav_page.path %}
+                    {% assign section_is_active = true %}
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        {% if section.path %}
+            {% if page.url contains section.path %}
+                {% assign section_is_active = true %}
+            {% endif %}
+        {% endif %}
+        
+        <div class="sidebar-spacer"></div>
+        <div class="sidebar-section">
+            {% if section.path %}
+                <a href="{{ section.path | relative_url }}" class="sidebar-toggle {% if section_is_active %}active{% endif %}">
+                    {% if section.icon %}
+                        <i class="fa-solid fa-1x {{ section.icon }}"></i>
+                    {% endif %}
+                    <span class="sidebar-section-title">{{ section.title }}</span>
+                </a>
+            {% else %}
+                <button class="sidebar-toggle {% if section_is_active %}active{% endif %}">
+                    {% if section.icon %}
+                        <i class="fa-solid fa-1x {{ section.icon }}"></i>
+                    {% endif %}
+                    <span class="sidebar-section-title">{{ section.title }}</span>
+                </button>
+            {% endif %}
+            {% if section.pages %}
+                <div class="sidebar-links" id="{{ section.section }}-links">
+                    {% assign sorted_pages = section.pages | sort: "order" %}
+                    {% for nav_page in sorted_pages %}
+                    <div class="sidebar-link-wrapper">
+                        <a href="{{ nav_page.path | relative_url }}"
+                            class="sidebar-link {% if page.url contains nav_page.path %}active{% endif %}">
+                            {{ nav_page.title }}
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+    </nav>
+</div>

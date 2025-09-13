@@ -1,0 +1,134 @@
+/* Layout Styles - Main page structure, documentation layout, and page containers */
+
+/* Page Content Layout */
+.page {
+    display: flex;
+    width: 100%;
+}
+
+/* Documentation Layout Styles */
+.docs-layout {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.docs-wrapper {
+    display: flex;
+    max-width: 1080px;
+    margin: 0;
+    margin-right: auto;
+    gap: 2rem;
+}
+
+.docs-page {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Home Page Layout */
+.home-page {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.home-page .main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1080px;
+    min-width: 100px;
+    margin-right: auto;
+    margin-left: 0;
+    transition: all 0.3s ease;
+}
+
+/* Header Layout for Documentation */
+.docs-layout .header {
+    border-bottom: 1px solid #E7E7E7;
+    display: flex;
+    height: 72px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    margin: 0 32px;
+    padding: 16px 0;
+}
+
+.docs-layout .site-nav .page-link {
+    color: #2c3e50;
+    margin-left: 1.5rem;
+}
+
+.docs-layout .site-nav .page-link:hover {
+    color: #3498db;
+}
+
+/* Layout Responsive Design */
+@media (max-width: 768px) {
+    .docs-page {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .docs-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .home-page {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .home-page .main-content {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 1920px) {
+    .home-page .main-content {
+        margin-left: auto;
+    }
+}
+
+/* Full-width override for privacy attacks page */
+.privacy-attacks-page .main-content {
+    max-width: none;
+    width: 100%;
+    flex: 1 1 100%;
+}
+
+/* Ensure full-width content on privacy attacks page */
+.privacy-attacks-page,
+.privacy-attacks-page .docs-content,
+.privacy-attacks-page .post,
+.privacy-attacks-page .post-content {
+    width: 100%;
+    max-width: none;
+}
+
+/* Remove padding to allow full-width table on privacy attacks page */
+.privacy-attacks-page {
+    padding: 0;
+}
+
+/* Page-specific: widen content on acknowledgements page */
+.acknowledgements .docs-wrapper {
+    max-width: 1280px;
+}

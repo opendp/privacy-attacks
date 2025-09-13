@@ -1,0 +1,686 @@
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const deploymentsData = JSON.parse(document.getElementById('deployments-data').textContent);
+    const table = document.getElementById('deployments-table');
+    const tbody = table.querySelector('tbody');
+    
+    // Helper function to normalize values for comparison and storage
+    function normalizeValue(value) {
+        if (value === null || value === undefined) {
+            return '';
+        }
+        return value.toString().trim().toLowerCase();
+    }
+    
+    // Helper function to get display value from normalized value
+    function getDisplayValue(normalizedValue, originalValues) {
+        if (!normalizedValue) return '';
+        const trimmedNormalized = normalizedValue.trim().toLowerCase();
+        const found = originalValues.find(val => 
+            val && normalizeValue(val) === trimmedNormalized
+        );
+        return found || normalizedValue;
+    }
+    
+    // Custom Select Component
+    class CustomSelect {
+        constructor(container, placeholder = 'Select...') {
+            this.container = container;
+            this.placeholder = placeholder;
+            this.value = '';
+            this.options = [];
+            this.isOpen = false;
+            this.onChange = null;
+            
+            this.createSelect();
+            this.bindEvents();
+        }
+        
+        createSelect() {
+            this.container.innerHTML = `
+                <div class="custom-select">
+                    <div class="custom-select-trigger">
+                        <span class="custom-select-value">${this.placeholder}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                            <mask id="mask0_515_4768" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="21" height="20">
+                                <rect x="0.666626" width="20" height="20" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_515_4768)">
+                                <path d="M8.62927 8.72917L11.3626 5.99583C11.4848 5.87361 11.6265 5.8125 11.7876 5.8125C11.9487 5.8125 12.0904 5.87361 12.2126 5.99583C12.3348 6.11806 12.3959 6.25972 12.3959 6.42083C12.3959 6.58194 12.3329 6.7255 12.2069 6.8515L9.04593 10.0125C8.98593 10.0681 8.92093 10.1097 8.85093 10.1375C8.78093 10.1653 8.70593 10.1792 8.62593 10.1792C8.54593 10.1792 8.47093 10.1653 8.40093 10.1375C8.33093 10.1097 8.26816 10.0681 8.2126 10.0125L5.0516 6.8515C4.9256 6.7255 4.86538 6.58472 4.87093 6.42917C4.87649 6.27361 4.94038 6.13472 5.0626 6.0125C5.18482 5.89028 5.32649 5.82917 5.4876 5.82917C5.64871 5.82917 5.79038 5.89028 5.9126 6.0125L8.62927 8.72917Z" fill="#3A3A3A"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="custom-select-options">
+                        <div class="custom-select-option" data-value="">${this.placeholder}</div>
+                    </div>
+                </div>
+            `;
+            
+            this.trigger = this.container.querySelector('.custom-select-trigger');
+            this.valueElement = this.container.querySelector('.custom-select-value');
+            this.optionsContainer = this.container.querySelector('.custom-select-options');
+        }
+        
+        bindEvents() {
+            this.trigger.addEventListener('click', () => this.toggle());
+            
+            document.addEventListener('click', (e) => {
+                if (!this.container.contains(e.target)) {
+                    this.close();
+                }
+            });
+            
+            this.optionsContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('custom-select-option')) {
+                    this.selectOption(e.target.dataset.value, e.target.textContent);
+                }
+            });
+        }
+        
+        toggle() {
+            this.isOpen ? this.close() : this.open();
+        }
+        
+        open() {
+            this.isOpen = true;
+            this.container.querySelector('.custom-select').classList.add('open');
+        }
+        
+        close() {
+            this.isOpen = false;
+            this.container.querySelector('.custom-select').classList.remove('open');
+        }
+        
+        selectOption(value, text) {
+            this.value = value;
+            this.valueElement.textContent = text;
+            this.close();
+            
+            if (this.onChange) {
+                this.onChange(value);
+            }
+        }
+        
+        updateOptions(options) {
+            this.options = options;
+            this.optionsContainer.innerHTML = `<div class="custom-select-option" data-value="">${this.placeholder}</div>`;
+            
+            options.forEach(option => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'custom-select-option';
+                optionElement.dataset.value = option;
+                optionElement.textContent = option;
+                this.optionsContainer.appendChild(optionElement);
+            });
+        }
+        
+        setValue(value) {
+            this.value = value;
+            if (value === '') {
+                this.valueElement.textContent = this.placeholder;
+            } else {
+                this.valueElement.textContent = value;
+            }
+        }
+    }
+    
+    // Custom MultiSelect Component
+    class CustomMultiSelect {
+        constructor(container, placeholder = 'Select...') {
+            this.container = container;
+            this.placeholder = placeholder;
+            this.values = [];
+            this.options = [];
+            this.isOpen = false;
+            this.onChange = null;
+            
+            this.createMultiSelect();
+            this.bindEvents();
+        }
+        
+        createMultiSelect() {
+            this.container.innerHTML = `
+                <div class="custom-multiselect">
+                    <div class="custom-multiselect-trigger">
+                        <div class="custom-multiselect-values">
+                            <span class="custom-multiselect-placeholder">${this.placeholder}</span>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                            <mask id="mask0_515_4275" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="21" height="20">
+                                <rect x="0.333313" width="20" height="20" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_515_4275)">
+                                <path d="M8.29595 8.72917L11.0293 5.99583C11.1515 5.87361 11.2932 5.8125 11.4543 5.8125C11.6154 5.8125 11.7571 5.87361 11.8793 5.99583C12.0015 6.11806 12.0626 6.25972 12.0626 6.42083C12.0626 6.58194 11.9996 6.7255 11.8736 6.8515L8.71262 10.0125C8.65262 10.0681 8.58762 10.1097 8.51762 10.1375C8.44762 10.1653 8.37262 10.1792 8.29262 10.1792C8.21262 10.1792 8.13762 10.1653 8.06762 10.1375C7.99762 10.1097 7.93484 10.0681 7.87929 10.0125L4.71829 6.8515C4.59229 6.7255 4.53207 6.58472 4.53762 6.42917C4.54318 6.27361 4.60707 6.13472 4.72929 6.0125C4.85151 5.89028 4.99318 5.82917 5.15429 5.82917C5.3154 5.82917 5.45707 5.89028 5.57929 6.0125L8.29595 8.72917Z" fill="#3A3A3A"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="custom-multiselect-options">
+                    </div>
+                </div>
+            `;
+            
+            this.trigger = this.container.querySelector('.custom-multiselect-trigger');
+            this.valuesContainer = this.container.querySelector('.custom-multiselect-values');
+            this.optionsContainer = this.container.querySelector('.custom-multiselect-options');
+            this.placeholder_element = this.container.querySelector('.custom-multiselect-placeholder');
+        }
+        
+        bindEvents() {
+            this.trigger.addEventListener('click', () => this.toggle());
+            
+            document.addEventListener('click', (e) => {
+                if (!this.container.contains(e.target)) {
+                    this.close();
+                }
+            });
+            
+            this.optionsContainer.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent closing when clicking inside options
+                if (e.target.classList.contains('custom-multiselect-option')) {
+                    this.toggleOption(e.target.dataset.value);
+                } else if (e.target.parentElement.classList.contains('custom-multiselect-option')) {
+                    this.toggleOption(e.target.parentElement.dataset.value);
+                } else if (e.target.classList.contains('custom-checkbox')) {
+                    this.toggleOption(e.target.parentElement.dataset.value);
+                }
+            });
+        }
+        
+        toggle() {
+            this.isOpen ? this.close() : this.open();
+        }
+        
+        open() {
+            this.isOpen = true;
+            this.container.querySelector('.custom-multiselect').classList.add('open');
+        }
+        
+        close() {
+            this.isOpen = false;
+            this.container.querySelector('.custom-multiselect').classList.remove('open');
+        }
+        
+        toggleOption(value) {
+            const index = this.values.indexOf(value);
+            if (index > -1) {
+                this.values.splice(index, 1);
+            } else {
+                this.values.push(value);
+            }
+            
+            this.updateDisplay();
+            this.updateOptionStates();
+            
+            if (this.onChange) {
+                this.onChange(this.values);
+            }
+        }
+        
+        updateDisplay() {
+            if (this.values.length === 0) {
+                this.valuesContainer.innerHTML = `<span class="custom-multiselect-placeholder">${this.placeholder}</span>`;
+            } else {
+                this.valuesContainer.innerHTML = `<span class="custom-multiselect-count">${this.placeholder} ${this.values.length} selected</span>`;
+            }
+        }
+        
+        updateOptionStates() {
+            this.optionsContainer.querySelectorAll('.custom-multiselect-option').forEach(option => {
+                const checkmark = option.querySelector('.checkmark');
+                const checkbox = option.querySelector('.checkbox-icon rect');
+                
+                if (this.values.includes(option.dataset.value)) {
+                    option.classList.add('selected');
+                    if (checkmark) checkmark.style.display = 'block';
+                    if (checkbox) checkbox.setAttribute('fill', '#0066CC');
+                } else {
+                    option.classList.remove('selected');
+                    if (checkmark) checkmark.style.display = 'none';
+                    if (checkbox) checkbox.setAttribute('fill', 'white');
+                }
+            });
+        }
+        
+        updateOptions(options) {
+            this.options = options;
+            this.optionsContainer.innerHTML = '';
+            
+            options.forEach(option => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'custom-multiselect-option';
+                optionElement.dataset.value = option;
+                optionElement.id = `option-${option}`;
+                optionElement.innerHTML = `
+                    <div class="custom-checkbox">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <rect width="16" height="16" fill="white" fill-opacity="0.01"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2314 3.97521C12.5395 4.17671 12.626 4.58987 12.4245 4.89803L7.8912 11.8314C7.78436 11.9948 7.61128 12.1031 7.41763 12.1278C7.22398 12.1526 7.02923 12.0911 6.88477 11.9598L3.95144 9.29315C3.679 9.04548 3.65892 8.62385 3.90659 8.35141C4.15426 8.07898 4.57589 8.05889 4.84833 8.30657L7.20313 10.4473L11.3086 4.16836C11.5101 3.8602 11.9232 3.77373 12.2314 3.97521Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <span class="custom-multiselect-text">${option}</span>
+                `;
+                this.optionsContainer.appendChild(optionElement);
+            });
+            
+            this.updateOptionStates();
+        }
+        
+        clearSelection() {
+            this.values = [];
+            this.updateDisplay();
+            this.updateOptionStates();
+        }
+        
+        getValues() {
+            return this.values;
+        }
+    }
+    
+    // Initialize custom components
+    const searchFilterElement = document.querySelector('#search-filter');
+    const filterElements = {
+        visibleFilters: document.querySelector('#visible-filters'),
+        curator: document.querySelector('#curator-filter'),
+        model: document.querySelector('#model-filter'),
+        product: document.querySelector('#product-filter'),
+        flavor: document.querySelector('#flavor-filter'),
+        privacyUnit: document.querySelector('#privacy-unit-filter'),
+        tier: document.querySelector('#tier-filter'),
+        year: document.querySelector('#year-filter')
+    };
+    
+    // Validate all required elements exist
+    const missingElements = Object.entries(filterElements)
+        .filter(([key, element]) => !element)
+        .map(([key]) => key);
+    
+    if (!searchFilterElement) {
+        console.error('Search filter element not found!');
+        return;
+    }
+    
+    if (missingElements.length > 0) {
+        console.error(`Filter elements not found: ${missingElements.join(', ')}`);
+        return;
+    }
+    
+    // Extract elements for easier access
+    const {
+        visibleFilters: visibleFiltersElement,
+        curator: curatorFilterElement,
+        model: modelFilterElement,
+        product: productFilterElement,
+        flavor: flavorFilterElement,
+        privacyUnit: privacyUnitFilterElement,
+        tier: tierFilterElement,
+        year: yearFilterElement
+    } = filterElements;
+    
+    const visibleFiltersGroup = visibleFiltersElement.parentElement;
+    const curatorFilterGroup = curatorFilterElement.parentElement;
+    const modelFilterGroup = modelFilterElement.parentElement;
+    const productFilterGroup = productFilterElement.parentElement;
+    const flavorFilterGroup = flavorFilterElement.parentElement;
+    const privacyUnitFilterGroup = privacyUnitFilterElement.parentElement;
+    const tierFilterGroup = tierFilterElement.parentElement;
+    const yearFilterGroup = yearFilterElement.parentElement;
+    
+    const visibleFiltersMultiSelect = new CustomMultiSelect(visibleFiltersGroup, 'Filters');
+    const curatorSelect = new CustomSelect(curatorFilterGroup, 'Curators');
+    const modelMultiSelect = new CustomMultiSelect(modelFilterGroup, 'Models');
+    const productMultiSelect = new CustomMultiSelect(productFilterGroup, 'Products');
+    const flavorMultiSelect = new CustomMultiSelect(flavorFilterGroup, 'Flavors');
+    const privacyUnitMultiSelect = new CustomMultiSelect(privacyUnitFilterGroup, 'Privacy Units');
+    const tierMultiSelect = new CustomMultiSelect(tierFilterGroup, 'Tiers');
+    const yearMultiSelect = new CustomMultiSelect(yearFilterGroup, 'Years');
+    
+    // Hide original dropdown filter elements (but keep search visible)
+    Object.values(filterElements).forEach(element => {
+        element.style.display = 'none';
+    });
+    
+    
+    // Helper function to get tier from deployment data
+    function getTierFromData(deployment) {
+        // Try to find tier in the DOM by matching the deployment index
+        const deploymentIndex = deploymentsData.indexOf(deployment);
+        if (deploymentIndex !== -1) {
+            const rows = document.querySelectorAll('.deployment-row');
+            if (rows[deploymentIndex]) {
+                const tierColumn = rows[deploymentIndex].querySelector('.tier-column');
+                if (tierColumn && tierColumn.dataset.tier) {
+                    return tierColumn.dataset.tier;
+                }
+            }
+        }
+        
+        return undefined;
+    }
+    
+    // Initialize filter visibility options
+    function initializeFilterVisibilityOptions() {
+        const filterOptions = [
+            'Curator',
+            'Model', 
+            'Product',
+            'Flavor',
+            'Privacy Unit',
+            'Tier',
+            'Year'
+        ];
+        
+        visibleFiltersMultiSelect.updateOptions(filterOptions);
+    }
+    
+    // Handle filter visibility changes
+    function handleFilterVisibilityChange(visibleFilters) {
+        const filterGroups = {
+            'Curator': document.getElementById('curator-filter-group'),
+            'Model': document.getElementById('model-filter-group'),
+            'Product': document.getElementById('product-filter-group'),
+            'Flavor': document.getElementById('flavor-filter-group'),
+            'Privacy Unit': document.getElementById('privacy-unit-filter-group'),
+            'Tier': document.getElementById('tier-filter-group'),
+            'Year': document.getElementById('year-filter-group')
+        };
+        
+        const filterComponents = {
+            'Curator': curatorSelect,
+            'Model': modelMultiSelect,
+            'Product': productMultiSelect,
+            'Flavor': flavorMultiSelect,
+            'Privacy Unit': privacyUnitMultiSelect,
+            'Tier': tierMultiSelect,
+            'Year': yearMultiSelect
+        };
+        
+        // Hide all filter groups first and clear selections for hidden filters
+        Object.entries(filterGroups).forEach(([filterName, group]) => {
+            if (group) {
+                if (visibleFilters.includes(filterName)) {
+                    group.style.display = '';
+                } else {
+                    group.style.display = 'none';
+                    // Clear the filter selection when hiding
+                    const component = filterComponents[filterName];
+                    if (component) {
+                        if (component.clearSelection) {
+                            component.clearSelection(); // For multi-select components
+                        } else if (component.setValue) {
+                            component.setValue(''); // For single-select components
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Trigger filter update after clearing hidden filters
+        populateFilters();
+        filterTable();
+    }
+    
+    // Search function
+    function performSearch(searchTerm) {
+        if (!searchTerm || searchTerm.trim() === '') {
+            return true; // Show all if no search term
+        }
+        
+        searchTerm = searchTerm.toLowerCase();
+        
+        return function(deployment) {
+            // Search in various fields
+            const searchableFields = [
+                deployment.data_curator,
+                deployment.data_product_type,
+                deployment.dp_flavor?.name,
+                deployment.model?.model_name,
+                deployment.privacy_loss?.privacy_unit,
+                deployment.privacy_loss?.privacy_parameters?.epsilon,
+                deployment.privacy_loss?.privacy_parameters?.delta,
+                deployment.privacy_loss?.privacy_parameters?.rho,
+                deployment.publication_date
+            ];
+            
+            return searchableFields.some(field => 
+                field && field.toString().toLowerCase().includes(searchTerm)
+            );
+        };
+    }
+    
+    // Populate filter options
+    function populateFilters() {
+        const selectedCurator = curatorSelect.value;
+        const selectedModels = modelMultiSelect.getValues();
+        const selectedProducts = productMultiSelect.getValues();
+        const selectedFlavors = flavorMultiSelect.getValues();
+        const selectedPrivacyUnits = privacyUnitMultiSelect.getValues();
+        const selectedTiers = tierMultiSelect.getValues();
+        const selectedYears = yearMultiSelect.getValues();
+        
+        // Get unique values from filtered data using normalized comparison
+        const curatorMap = new Map();
+        deploymentsData.filter(d => {
+            const matchesModel = selectedModels.length === 0 || selectedModels.some(model => normalizeValue(model) === normalizeValue(d.model?.model_name));
+            const matchesProduct = selectedProducts.length === 0 || selectedProducts.some(product => normalizeValue(product) === normalizeValue(d.data_product_type));
+            const matchesFlavor = selectedFlavors.length === 0 || selectedFlavors.some(flavor => normalizeValue(flavor) === normalizeValue(d.dp_flavor?.name));
+            const matchesPrivacyUnit = selectedPrivacyUnits.length === 0 || selectedPrivacyUnits.some(unit => normalizeValue(unit) === normalizeValue(d.privacy_loss?.privacy_unit));
+            const matchesTier = selectedTiers.length === 0 || selectedTiers.some(tier => normalizeValue(tier) === normalizeValue(getTierFromData(d)));
+            const matchesYear = selectedYears.length === 0 || selectedYears.some(year => normalizeValue(year) === normalizeValue(new Date(d.publication_date).getFullYear().toString()));
+            return matchesModel && matchesProduct && matchesFlavor && matchesPrivacyUnit && matchesTier && matchesYear;
+        }).forEach(d => {
+            if (d.data_curator) {
+                const normalized = normalizeValue(d.data_curator);
+                if (!curatorMap.has(normalized)) {
+                    curatorMap.set(normalized, d.data_curator);
+                }
+            }
+        });
+        const curators = Array.from(curatorMap.values()).sort();
+        
+        const modelMap = new Map();
+        deploymentsData.filter(d => {
+            const matchesCurator = !selectedCurator || normalizeValue(d.data_curator) === normalizeValue(selectedCurator);
+            const matchesProduct = selectedProducts.length === 0 || selectedProducts.some(product => normalizeValue(product) === normalizeValue(d.data_product_type));
+            const matchesFlavor = selectedFlavors.length === 0 || selectedFlavors.some(flavor => normalizeValue(flavor) === normalizeValue(d.dp_flavor?.name));
+            const matchesPrivacyUnit = selectedPrivacyUnits.length === 0 || selectedPrivacyUnits.some(unit => normalizeValue(unit) === normalizeValue(d.privacy_loss?.privacy_unit));
+            const matchesTier = selectedTiers.length === 0 || selectedTiers.some(tier => normalizeValue(tier) === normalizeValue(getTierFromData(d)));
+            const matchesYear = selectedYears.length === 0 || selectedYears.some(year => normalizeValue(year) === normalizeValue(new Date(d.publication_date).getFullYear().toString()));
+            return matchesCurator && matchesProduct && matchesFlavor && matchesPrivacyUnit && matchesTier && matchesYear;
+        }).forEach(d => {
+            if (d.model?.model_name) {
+                const normalized = normalizeValue(d.model.model_name);
+                if (!modelMap.has(normalized)) {
+                    modelMap.set(normalized, d.model.model_name);
+                }
+            }
+        });
+        const models = Array.from(modelMap.values()).sort();
+        
+        const productMap = new Map();
+        deploymentsData.filter(d => {
+            const matchesCurator = !selectedCurator || normalizeValue(d.data_curator) === normalizeValue(selectedCurator);
+            const matchesModel = selectedModels.length === 0 || selectedModels.some(model => normalizeValue(model) === normalizeValue(d.model?.model_name));
+            const matchesFlavor = selectedFlavors.length === 0 || selectedFlavors.some(flavor => normalizeValue(flavor) === normalizeValue(d.dp_flavor?.name));
+            const matchesPrivacyUnit = selectedPrivacyUnits.length === 0 || selectedPrivacyUnits.some(unit => normalizeValue(unit) === normalizeValue(d.privacy_loss?.privacy_unit));
+            const matchesTier = selectedTiers.length === 0 || selectedTiers.some(tier => normalizeValue(tier) === normalizeValue(getTierFromData(d)));
+            const matchesYear = selectedYears.length === 0 || selectedYears.some(year => normalizeValue(year) === normalizeValue(new Date(d.publication_date).getFullYear().toString()));
+            return matchesCurator && matchesModel && matchesFlavor && matchesPrivacyUnit && matchesTier && matchesYear;
+        }).forEach(d => {
+            if (d.data_product_type) {
+                const normalized = normalizeValue(d.data_product_type);
+                if (!productMap.has(normalized)) {
+                    productMap.set(normalized, d.data_product_type);
+                }
+            }
+        });
+        const products = Array.from(productMap.values()).sort();
+        
+        const flavorMap = new Map();
+        deploymentsData.filter(d => {
+            const matchesCurator = !selectedCurator || normalizeValue(d.data_curator) === normalizeValue(selectedCurator);
+            const matchesModel = selectedModels.length === 0 || selectedModels.some(model => normalizeValue(model) === normalizeValue(d.model?.model_name));
+            const matchesProduct = selectedProducts.length === 0 || selectedProducts.some(product => normalizeValue(product) === normalizeValue(d.data_product_type));
+            const matchesPrivacyUnit = selectedPrivacyUnits.length === 0 || selectedPrivacyUnits.some(unit => normalizeValue(unit) === normalizeValue(d.privacy_loss?.privacy_unit));
+            const matchesTier = selectedTiers.length === 0 || selectedTiers.some(tier => normalizeValue(tier) === normalizeValue(getTierFromData(d)));
+            const matchesYear = selectedYears.length === 0 || selectedYears.some(year => normalizeValue(year) === normalizeValue(new Date(d.publication_date).getFullYear().toString()));
+            return matchesCurator && matchesModel && matchesProduct && matchesPrivacyUnit && matchesTier && matchesYear;
+        }).forEach(d => {
+            if (d.dp_flavor?.name) {
+                const normalized = normalizeValue(d.dp_flavor.name);
+                if (!flavorMap.has(normalized)) {
+                    flavorMap.set(normalized, d.dp_flavor.name);
+                }
+            }
+        });
+        const flavors = Array.from(flavorMap.values()).sort();
+        
+        const privacyUnitMap = new Map();
+        deploymentsData.filter(d => {
+            const matchesCurator = !selectedCurator || normalizeValue(d.data_curator) === normalizeValue(selectedCurator);
+            const matchesModel = selectedModels.length === 0 || selectedModels.some(model => normalizeValue(model) === normalizeValue(d.model?.model_name));
+            const matchesProduct = selectedProducts.length === 0 || selectedProducts.some(product => normalizeValue(product) === normalizeValue(d.data_product_type));
+            const matchesFlavor = selectedFlavors.length === 0 || selectedFlavors.some(flavor => normalizeValue(flavor) === normalizeValue(d.dp_flavor?.name));
+            const matchesTier = selectedTiers.length === 0 || selectedTiers.some(tier => normalizeValue(tier) === normalizeValue(getTierFromData(d)));
+            const matchesYear = selectedYears.length === 0 || selectedYears.some(year => normalizeValue(year) === normalizeValue(new Date(d.publication_date).getFullYear().toString()));
+            return matchesCurator && matchesModel && matchesProduct && matchesFlavor && matchesTier && matchesYear;
+        }).forEach(d => {
+            if (d.privacy_loss?.privacy_unit) {
+                const normalized = normalizeValue(d.privacy_loss.privacy_unit);
+                if (!privacyUnitMap.has(normalized)) {
+                    privacyUnitMap.set(normalized, d.privacy_loss.privacy_unit);
+                }
+            }
+        });
+        const privacyUnits = Array.from(privacyUnitMap.values()).sort();
+        
+        const tierMap = new Map();
+        deploymentsData.filter(d => {
+            const matchesCurator = !selectedCurator || normalizeValue(d.data_curator) === normalizeValue(selectedCurator);
+            const matchesModel = selectedModels.length === 0 || selectedModels.some(model => normalizeValue(model) === normalizeValue(d.model?.model_name));
+            const matchesProduct = selectedProducts.length === 0 || selectedProducts.some(product => normalizeValue(product) === normalizeValue(d.data_product_type));
+            const matchesFlavor = selectedFlavors.length === 0 || selectedFlavors.some(flavor => normalizeValue(flavor) === normalizeValue(d.dp_flavor?.name));
+            const matchesPrivacyUnit = selectedPrivacyUnits.length === 0 || selectedPrivacyUnits.some(unit => normalizeValue(unit) === normalizeValue(d.privacy_loss?.privacy_unit));
+            const matchesYear = selectedYears.length === 0 || selectedYears.some(year => normalizeValue(year) === normalizeValue(new Date(d.publication_date).getFullYear().toString()));
+            return matchesCurator && matchesModel && matchesProduct && matchesFlavor && matchesPrivacyUnit && matchesYear;
+        }).forEach(d => {
+            const tierValue = getTierFromData(d);
+            if (tierValue) {
+                const normalized = normalizeValue(tierValue);
+                if (!tierMap.has(normalized)) {
+                    tierMap.set(normalized, tierValue);
+                }
+            }
+        });
+        const tiers = Array.from(tierMap.values()).sort((a, b) => a - b);
+        
+        const yearMap = new Map();
+        deploymentsData.filter(d => {
+            const matchesCurator = !selectedCurator || normalizeValue(d.data_curator) === normalizeValue(selectedCurator);
+            const matchesModel = selectedModels.length === 0 || selectedModels.some(model => normalizeValue(model) === normalizeValue(d.model?.model_name));
+            const matchesProduct = selectedProducts.length === 0 || selectedProducts.some(product => normalizeValue(product) === normalizeValue(d.data_product_type));
+            const matchesFlavor = selectedFlavors.length === 0 || selectedFlavors.some(flavor => normalizeValue(flavor) === normalizeValue(d.dp_flavor?.name));
+            const matchesPrivacyUnit = selectedPrivacyUnits.length === 0 || selectedPrivacyUnits.some(unit => normalizeValue(unit) === normalizeValue(d.privacy_loss?.privacy_unit));
+            const matchesTier = selectedTiers.length === 0 || selectedTiers.some(tier => normalizeValue(tier) === normalizeValue(getTierFromData(d)));
+            return matchesCurator && matchesModel && matchesProduct && matchesFlavor && matchesPrivacyUnit && matchesTier;
+        }).forEach(d => {
+            const date = new Date(d.publication_date);
+            const yearValue = date.getFullYear().toString();
+            if (yearValue) {
+                const normalized = normalizeValue(yearValue);
+                if (!yearMap.has(normalized)) {
+                    yearMap.set(normalized, yearValue);
+                }
+            }
+        });
+        const years = Array.from(yearMap.values()).sort((a, b) => b - a);
+        
+        // Update custom components
+        curatorSelect.updateOptions(curators);
+        modelMultiSelect.updateOptions(models);
+        productMultiSelect.updateOptions(products);
+        flavorMultiSelect.updateOptions(flavors);
+        privacyUnitMultiSelect.updateOptions(privacyUnits);
+        tierMultiSelect.updateOptions(tiers);
+        yearMultiSelect.updateOptions(years);
+    }
+    
+    // Filter function
+    function filterTable() {
+        const searchTerm = searchFilterElement.value;
+        const searchFunction = performSearch(searchTerm);
+        const selectedCurator = curatorSelect.value;
+        const selectedModels = modelMultiSelect.getValues();
+        const selectedProducts = productMultiSelect.getValues();
+        const selectedFlavors = flavorMultiSelect.getValues();
+        const selectedPrivacyUnits = privacyUnitMultiSelect.getValues();
+        const selectedTiers = tierMultiSelect.getValues();
+        const selectedYears = yearMultiSelect.getValues();
+        
+        const rows = tbody.querySelectorAll('.deployment-row');
+        
+        rows.forEach((row, index) => {
+            const deployment = deploymentsData[index];
+            const deploymentYear = new Date(deployment.publication_date).getFullYear().toString();
+            const deploymentTier = getTierFromData(deployment);
+            
+            const matchesSearch = searchFunction === true || searchFunction(deployment);
+            const matchesCurator = selectedCurator === '' || normalizeValue(deployment.data_curator) === normalizeValue(selectedCurator);
+            const matchesModel = selectedModels.length === 0 || selectedModels.some(model => normalizeValue(model) === normalizeValue(deployment.model?.model_name));
+            const matchesProduct = selectedProducts.length === 0 || selectedProducts.some(product => normalizeValue(product) === normalizeValue(deployment.data_product_type));
+            const matchesFlavor = selectedFlavors.length === 0 || selectedFlavors.some(flavor => normalizeValue(flavor) === normalizeValue(deployment.dp_flavor?.name));
+            const matchesPrivacyUnit = selectedPrivacyUnits.length === 0 || selectedPrivacyUnits.some(unit => normalizeValue(unit) === normalizeValue(deployment.privacy_loss?.privacy_unit));
+            const matchesTier = selectedTiers.length === 0 || selectedTiers.some(tier => normalizeValue(tier) === normalizeValue(deploymentTier));
+            const matchesYear = selectedYears.length === 0 || selectedYears.some(year => normalizeValue(year) === normalizeValue(deploymentYear));
+            
+            if (matchesSearch && matchesCurator && matchesModel && matchesProduct && matchesFlavor && matchesPrivacyUnit && matchesTier && matchesYear) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+    
+    // Clear filters function
+    function clearFilters() {
+        searchFilterElement.value = '';
+        visibleFiltersMultiSelect.clearSelection();
+        curatorSelect.setValue('');
+        modelMultiSelect.clearSelection();
+        productMultiSelect.clearSelection();
+        flavorMultiSelect.clearSelection();
+        privacyUnitMultiSelect.clearSelection();
+        tierMultiSelect.clearSelection();
+        yearMultiSelect.clearSelection();
+        
+        // Hide all filter groups
+        handleFilterVisibilityChange([]);
+        
+        populateFilters();
+        filterTable();
+    }
+    
+    // Handle filter change
+    function handleFilterChange() {
+        populateFilters();
+        filterTable();
+    }
+    
+    // Set up change handlers
+    searchFilterElement.addEventListener('input', filterTable);
+    visibleFiltersMultiSelect.onChange = handleFilterVisibilityChange;
+    curatorSelect.onChange = handleFilterChange;
+    modelMultiSelect.onChange = handleFilterChange;
+    productMultiSelect.onChange = handleFilterChange;
+    flavorMultiSelect.onChange = handleFilterChange;
+    privacyUnitMultiSelect.onChange = handleFilterChange;
+    tierMultiSelect.onChange = handleFilterChange;
+    yearMultiSelect.onChange = handleFilterChange;
+    
+    // Event listeners
+    document.getElementById('clear-filters').addEventListener('click', clearFilters);
+    
+    // Initialize filter visibility options and populate filters
+    initializeFilterVisibilityOptions();
+    populateFilters();
+});
+</script>

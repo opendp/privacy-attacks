@@ -17,6 +17,28 @@ def convert_xls_to_yaml(input_path: Path, output_dir: Path) -> None:
         record = {col: row[col] for col in columns}
         print(df.columns)
 
+        # Extract publication year from BibTeX if available and not already present
+        try:
+            bibtex_col = next((c for c in columns if "bibtex" in str(c).lower()), None)
+        except Exception:
+            bibtex_col = None
+        if bibtex_col is not None:
+            bibtex_val = record.get(bibtex_col)
+            if pd.notna(bibtex_val):
+                bibtex_str = str(bibtex_val)
+                match = re.search(r"\byear\s*=\s*[{\"']?\s*(\d{4})", bibtex_str, flags=re.IGNORECASE)
+                if not match:
+                    match = re.search(r"\bdate\s*=\s*[{\"']?\s*(\d{4})", bibtex_str, flags=re.IGNORECASE)
+                if match:
+                    year_val = match.group(1)
+                    existing_year = record.get("Publication Year")
+                    if (
+                        existing_year is None
+                        or (isinstance(existing_year, float) and pd.isna(existing_year))
+                        or (isinstance(existing_year, str) and existing_year.strip() == "")
+                    ):
+                        record["Publication Year"] = int(year_val)
+
         if "Title" in df.columns:
             title_val = str(record.get("Title", "")).strip()
             title_processed = title_val.lower().replace(" ", "_")

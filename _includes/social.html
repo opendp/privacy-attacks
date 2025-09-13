@@ -1,0 +1,9 @@
+{%- assign social = site.minima.social_links -%}
+
+<ul class="social-media-list">
+  {%- for glb in social -%}
+    {%- if glb.platform == 'github' -%}
+      <li><a href="https://github.com/{{ glb.user_url }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg> <span class="username">{{ glb.user_url }}</span></a></li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>

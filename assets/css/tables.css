@@ -1,0 +1,284 @@
+/* Table Styles - Data tables styling including borders, hover effects, and clickable rows */
+
+/* Base Table Styling */
+.docs-content .table-container {
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: visible;
+    position: relative;
+    border: 1px solid #E7E7E7;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.docs-content table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    table-layout: fixed;
+    box-sizing: border-box;
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: none;
+    border: none;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #E7E7E7;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.main .docs-content table {
+    width: 100%;
+    margin: 0;
+}   
+
+/* Table Rows */
+.docs-content tbody tr {
+    height: 76px;
+    background-color: transparent;
+}
+
+.docs-content tr th {
+    background-color: transparent;
+}
+
+/* Table Cells */
+.docs-content th,
+.docs-content td {
+    padding: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    color: #181818;
+    border: 1px solid #E7E7E7;
+    border-right: 0;
+    border-bottom: 0;
+    font-weight: 300;
+    word-break: break-word;
+}
+
+.main .docs-content th,
+.main .docs-content td {
+    max-width: 300px;
+    width: fit-content;
+}
+
+/* Table Border Management */
+/* Add right border to last column */
+.docs-content th:last-child,
+.docs-content td:last-child {
+    border-right: 1px solid #E7E7E7;
+}
+
+/* Add bottom border to last row */
+.docs-content tbody tr:last-child td,
+.docs-content tbody tr:last-child th {
+    border-bottom: 1px solid #E7E7E7;
+}
+
+/* Table Corner Radius */
+.docs-content table tr:first-child th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.docs-content table tr:first-child th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.docs-content table tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+
+.docs-content table tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+/* Table Cell Content */
+.docs-content th {
+    text-overflow: ellipsis;
+    font-weight: 500;
+}
+
+.docs-content td {
+    font-weight: 300;
+}
+
+/* Table Hover Effects */
+.docs-content tr:hover {
+    background: #F3F3F3;
+}
+
+/* Clickable Row Styling */
+.deployment-row {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.deployment-row:hover {
+    background-color: #e9ecef;
+}
+
+.deployment-row.selected {
+    background-color: #DADADA;
+    color: white;
+}
+
+.deployment-row.selected:hover {
+    background-color: #DADADA;
+}
+
+.tier-column .tiers {
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    width: 35px;
+    gap: 2px;
+}
+.tier-column .tiers i {
+    font-size: 6px;
+    line-height: 10px;
+}
+
+.product-description{
+    position: relative;
+    width: 20%;
+    min-width: 150px;
+}
+.product-description .description-text {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.product-description .description-window {
+    position: absolute;
+    top: 70%;
+    z-index: 99999;
+    left: 0;
+    width: 200%;
+    max-width: 260px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 0.5px solid #DADADA;
+    background: #F3F3F3;
+    box-shadow: 0 1px 2px 0.5px rgba(0, 0, 0, 0.09);
+    opacity: 0;
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+.product-description:hover .description-window {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+tr:has(.description-window):last-child .product-description .description-window,
+tr:nth-last-child(2):has(.description-window) .product-description .description-window {
+    top: unset;
+    bottom: 70%;
+}
+
+/* Table Responsive Design */
+@media (max-width: 768px) {
+    .docs-content .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .docs-content table {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+/* Privacy Attacks table responsive overrides */
+#attacks-table {
+    width: 100%;
+    table-layout: fixed;
+}
+#attacks-table th,
+#attacks-table td {
+    width: auto !important;
+    max-width: none;
+    white-space: normal;
+}
+
+/* Enforce narrower widths for specific columns */
+#attacks-table th:nth-child(3),
+#attacks-table td:nth-child(3) { /* Year */
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 80px !important;
+}
+#attacks-table th:nth-child(7),
+#attacks-table td:nth-child(7) { /* Research Type */
+    width: 120px !important;
+    min-width: 110px !important;
+    max-width: 160px !important;
+}
+#attacks-table th:nth-child(8),
+#attacks-table td:nth-child(8) { /* BibTeX */
+    width: 90px !important;
+    min-width: 80px !important;
+    max-width: 120px !important;
+}
+#attacks-table th:nth-child(9),
+#attacks-table td:nth-child(9) { /* Code */
+    width: 90px !important;
+    min-width: 80px !important;
+    max-width: 120px !important;
+}
+#attacks-table th:nth-child(10),
+#attacks-table td:nth-child(10) { /* Links */
+    width: 90px !important;
+    min-width: 80px !important;
+    max-width: 120px !important;
+}
+#attacks-table th:nth-child(4),
+#attacks-table td:nth-child(4) { /* Data Type (Inputs) */
+    width: 120px !important;
+    min-width: 110px !important;
+    max-width: 150px !important;
+}
+#attacks-table th:nth-child(5),
+#attacks-table td:nth-child(5) { /* Type of Data Release (Outputs) */
+    width: 150px !important;
+    min-width: 130px !important;
+    max-width: 190px !important;
+}
+#attacks-table th:nth-child(6),
+#attacks-table td:nth-child(6) { /* Attacker Objectives */
+    width: 170px !important;
+    min-width: 150px !important;
+    max-width: 210px !important;
+}
+#attacks-table th:nth-child(11),
+#attacks-table td:nth-child(11) { /* Submitter */
+    width: 220px !important;
+    min-width: 180px !important;
+    max-width: 260px !important;
+}
+#attacks-table td.submitter-cell {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+/* Ensure table container uses full width on privacy attacks page */
+.privacy-attacks-page .table-container {
+    width: 100%;
+}
+
+/* Smaller font for Year, BibTeX, and Code columns in Privacy Attacks table */
+#attacks-table td.year-cell,
+#attacks-table td.bibtex-cell,
+#attacks-table td.code-cell {
+    font-size: 12px;
+    line-height: 16px;
+}
+#attacks-table td.bibtex-cell a,
+#attacks-table td.code-cell a {
+    font-size: inherit;
+}

@@ -1,0 +1,142 @@
+/* Content Styles - Main content area, typography, code blocks, and page elements */
+
+/* Main Content Container */
+.docs-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 24px 28px;
+    padding-right: 0;
+    font-weight: 300;
+    color: #5F5F5F;
+    font-family: "Inter", sans-serif;
+    animation: fadeIn 0.2s ease-in;
+}
+.page-icon{
+    height: 32px;
+    width: 32px;
+    margin-bottom: 24px;
+    position: relative;
+}
+.page-icon::before{
+    position: absolute;
+    top: 16px;
+    left: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.docs-content i {
+    color: #181818;
+}
+
+/* Page Titles and Headers */
+.docs-content .post-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #181818;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.docs-content h2 {
+    color: #34495e;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.docs-content h3 {
+    color: #34495e;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Text Content */
+.post p {
+    line-height: 24px;
+    margin-bottom: 0.5rem;
+}
+
+/* Code Styling */
+.docs-content code {
+    background-color: #f1f2f6;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: #e74c3c;
+}
+
+.docs-content pre {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+/* Blockquotes */
+.docs-content blockquote {
+    border-left: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0rem 1rem;
+    background-color: transparent;
+    color: #5F5F5F;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px
+}
+
+/* Images */
+.docs-content img {
+    max-width: 100%;
+    margin: 0.5rem 0;
+}
+
+/* Page Icons */
+.page-icon {
+    margin-bottom: 24px;
+    margin-right: auto;
+}
+
+.page-icon svg {
+    vertical-align: middle;
+    color: #181818;
+}
+
+/* Content Responsive Design */
+@media (max-width: 768px) {
+    .docs-content {
+        order: 1;
+        padding: 1rem;
+    }
+}
+
+/* Content Responsive Design */
+@media (min-width: 1920px) {
+    .docs-page .wrapper {
+        margin-left: auto;
+        width: 1080px;
+    }
+    .main .docs-content {
+        display: flex;
+        justify-content: center;
+    }
+}
