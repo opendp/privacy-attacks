@@ -84,17 +84,17 @@ permalink: /privacy-attacks/
 <table id="attacks-table">
     <thead>
         <tr>
-            <th style="width: 22%;">Title</th>
-            <th style="width: 18%;">Authors</th>
-            <th style="width: 6%; min-width: 60px;">Year</th>
-            <th style="width: 14%; min-width: 120px">Data Type (Inputs)</th>
-            <th style="width: 14%; min-width: 120px">Type of Data Release (Outputs)</th>
-            <th style="width: 16%; min-width: 120px">Attacker Objectives</th>
-            <th style="width: 8%; min-width: 120px">Research Type</th>
-            <th style="width: 6%; min-width: 80px">BibTeX</th>
-            <th style="width: 6%; min-width: 80px">Code</th>
-            <th style="width: 2%; min-width: 80px">Links</th>
-            <th style="min-width: 200px">Submitter</th>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Year</th>
+            <th>Data Type (Inputs)</th>
+            <th>Type of Data Release (Outputs)</th>
+            <th>Attacker Objectives</th>
+            <th>Research Type</th>
+            <th>BibTeX</th>
+            <th>Code</th>
+            <th>Links</th>
+            <th>Submitter</th>
         </tr>
     </thead>
     <tbody>

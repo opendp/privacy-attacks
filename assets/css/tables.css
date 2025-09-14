@@ -347,3 +347,34 @@ tr:nth-last-child(2):has(.description-window) .product-description .description-
         width: auto !important;
     }
 }
+
+/* Attacks table: first-principles sizing */
+#attacks-table {
+    table-layout: auto;
+}
+#attacks-table th,
+#attacks-table td {
+    width: auto !important;
+    white-space: normal;
+    word-break: break-word;
+}
+/* Ensure readability for key columns */
+#attacks-table th:nth-child(1),
+#attacks-table td:nth-child(1) {
+    min-width: 260px;
+}
+#attacks-table th:nth-child(2),
+#attacks-table td:nth-child(2) {
+    min-width: 180px;
+}
+
+@media (max-width: 768px) {
+    /* Allow horizontal scroll if content exceeds viewport */
+    .docs-content .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    #attacks-table {
+        width: max-content;
+    }
+}
