@@ -378,3 +378,10 @@ tr:nth-last-child(2):has(.description-window) .product-description .description-
         width: max-content;
     }
 }
+
+@media (min-width: 769px) {
+    #attacks-table {
+        width: 100%;
+        table-layout: fixed;
+    }
+}
