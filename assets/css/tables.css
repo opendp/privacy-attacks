@@ -322,3 +322,160 @@ tr:nth-last-child(2):has(.description-window) .product-description .description-
 #attacks-table td.code-cell a {
     font-size: inherit;
 }
+
+
+/* --------------------------
+   PRIVACY ATTACKS TABLE – WIDTH LOGIC SIMPLIFIED
+   Put this AFTER the existing CSS
+---------------------------*/
+
+/* 1) Let Title (1) and Author (2) be the only flexible columns */
+#attacks-table {
+    table-layout: fixed;                 /* fixed + px widths for fixed cols; remaining space -> flex cols */
+    width: 100%;
+  }
+  
+  /* Kill global caps that were shrinking text */
+  #attacks-table th,
+  #attacks-table td {
+    max-width: none !important;
+    width: auto;                         /* default: flexible unless overridden below */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* 2) FIXED columns: keep them constant (don’t grow) */
+  :root {
+    /* Tweak these once and done */
+    --w-year: 64px;
+    --w-inputs: 130px;
+    --w-outputs: 150px;
+    --w-objectives: 170px;
+    --w-research: 120px;
+    --w-bibtex: 90px;
+    --w-code: 90px;
+    --w-links: 90px;
+    --w-submitter: 200px;
+  }
+  
+  /* Year (3) */
+  #attacks-table th:nth-child(3),
+  #attacks-table td:nth-child(3) {
+    width: var(--w-year) !important;
+    min-width: var(--w-year) !important;
+    max-width: var(--w-year) !important;
+  }
+  
+  /* Data Type (Inputs) (4) */
+  #attacks-table th:nth-child(4),
+  #attacks-table td:nth-child(4) {
+    width: var(--w-inputs) !important;
+    min-width: var(--w-inputs) !important;
+    max-width: var(--w-inputs) !important;
+  }
+  
+  /* Type of Data Release (Outputs) (5) */
+  #attacks-table th:nth-child(5),
+  #attacks-table td:nth-child(5) {
+    width: var(--w-outputs) !important;
+    min-width: var(--w-outputs) !important;
+    max-width: var(--w-outputs) !important;
+  }
+  
+  /* Attacker Objectives (6) */
+  #attacks-table th:nth-child(6),
+  #attacks-table td:nth-child(6) {
+    width: var(--w-objectives) !important;
+    min-width: var(--w-objectives) !important;
+    max-width: var(--w-objectives) !important;
+  }
+  
+  /* Research Type (7) */
+  #attacks-table th:nth-child(7),
+  #attacks-table td:nth-child(7) {
+    width: var(--w-research) !important;
+    min-width: var(--w-research) !important;
+    max-width: var(--w-research) !important;
+  }
+  
+  /* BibTeX (8) */
+  #attacks-table th:nth-child(8),
+  #attacks-table td:nth-child(8) {
+    width: var(--w-bibtex) !important;
+    min-width: var(--w-bibtex) !important;
+    max-width: var(--w-bibtex) !important;
+  }
+  
+  /* Code (9) */
+  #attacks-table th:nth-child(9),
+  #attacks-table td:nth-child(9) {
+    width: var(--w-code) !important;
+    min-width: var(--w-code) !important;
+    max-width: var(--w-code) !important;
+  }
+  
+  /* Links (10) */
+  #attacks-table th:nth-child(10),
+  #attacks-table td:nth-child(10) {
+    width: var(--w-links) !important;
+    min-width: var(--w-links) !important;
+    max-width: var(--w-links) !important;
+  }
+  
+  /* Submitter (11) */
+  #attacks-table th:nth-child(11),
+  #attacks-table td:nth-child(11) {
+    width: var(--w-submitter) !important;
+    min-width: var(--w-submitter) !important;
+    max-width: var(--w-submitter) !important;
+    font-size: 12px; line-height: 16px; /* your existing micro type */
+  }
+  
+  #attacks-table th:nth-child(1),
+  #attacks-table td:nth-child(1),
+  #attacks-table th:nth-child(2),
+  #attacks-table td:nth-child(2) {
+    white-space: normal;                 /* allow wrapping */
+    overflow: hidden;
+  }
+  
+  #attacks-table td:nth-child(1),
+  #attacks-table td:nth-child(2) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;              /* show up to 3 lines; tweak to taste */
+  }
+  
+  .main .docs-content th,
+  .main .docs-content td {
+    max-width: none !important;
+    width: auto !important;              /* prevents fit-content from squeezing */
+  }
+  
+  .docs-content .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  @media (max-width: 768px) {
+    :root {
+      --w-inputs: 110px;
+      --w-outputs: 130px;
+      --w-objectives: 150px;
+      --w-research: 110px;
+      --w-submitter: 160px;
+    }
+  
+    #attacks-table th,
+    #attacks-table td {
+      font-size: 12px; line-height: 16px;
+      padding: 6px;
+    }
+  
+    /* Clamp Title/Author to 2 lines on small screens */
+    #attacks-table td:nth-child(1),
+    #attacks-table td:nth-child(2) {
+      -webkit-line-clamp: 2;
+    }
+  }
+    
