@@ -199,6 +199,10 @@ tr:nth-last-child(2):has(.description-window) .product-description .description-
         font-size: 12px;
         line-height: 16px;
         word-break: break-word;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        white-space: normal;
     }
 
     .docs-content thead th {
@@ -206,6 +210,27 @@ tr:nth-last-child(2):has(.description-window) .product-description .description-
         top: 0;
         z-index: 2;
         background-color: #fff;
+    }
+
+    #attacks-table {
+        table-layout: auto;
+    }
+    #attacks-table th,
+    #attacks-table td,
+    #attacks-table th:nth-child(n),
+    #attacks-table td:nth-child(n) {
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        white-space: normal;
+    }
+
+    #deployments-table th,
+    #deployments-table td {
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        white-space: normal;
     }
 }
 
