@@ -192,6 +192,21 @@ tr:nth-last-child(2):has(.description-window) .product-description .description-
         min-width: 0;
         width: 100%;
     }
+
+    .docs-content th,
+    .docs-content td {
+        padding: 6px;
+        font-size: 12px;
+        line-height: 16px;
+        word-break: break-word;
+    }
+
+    .docs-content thead th {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background-color: #fff;
+    }
 }
 
 /* Privacy Attacks table responsive overrides */
