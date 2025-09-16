@@ -1,0 +1,18 @@
+URL: https://arxiv.org/pdf/2504.18497
+BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@article{mao2025desia,\n\
+  \ title={DeSIA: Attribute Inference Attacks Against Limited Fixed Aggregate Statistics},\n\
+  \ author={Mao, Yifeng and Stevanoski, Bozhidar and de Montjoye, Yves-Alexandre},\n\
+  \ journal={arXiv preprint arXiv:2504.18497},\n\
+  \ year={2025}\n}"
+Authors: Yifeng Mao*, Bozhidar Stevanoski*, Yves-Alexandre de Montjoye
+Title: "DeSIA: Attribute Inference Attacks Against Limited Fixed Aggregate Statistics"
+Publication Year: 2025
+Short Description: A method for attribute-inference attacks against limited fixed aggregate statistics, that enables deterministically verifying the inferred value.
+Data Type: Tabular
+Type of Release: Linear queries
+Threat Model --- Attacker Objective: Attribute inference attack
+Threat Model --- Attacker Capabilities: .nan
+Research Type: Empirical
+Code: .nan
+Comments: .nan
+Submitter (your name, affiliation): Bozhidar Stevanoski, Imperial College London
