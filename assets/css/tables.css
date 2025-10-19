@@ -1,4 +1,15 @@
+/*
+  APPROACH: ADAPTED STACKED CARD METHOD (Mobile-First)
+
+  This stylesheet replaces the original complex CSS. It uses the "Stacked Card"
+  method, tailored to your existing class names and visual theme. It's built
+  mobile-first, meaning the default styles create a readable card-based layout
+  on small screens. A media query then transitions it to a traditional table
+  layout on larger screens.
+*/
+
 /* --- 1. General Variables & Container --- */
+/* We'll use some of your original styling for consistency. */
 :root {
     --table-border-color: #E7E7E7;
     --table-border-radius: 8px;
@@ -56,26 +67,15 @@
     font-weight: 300;
     /* Reset borders from original CSS */
     border: none;
+    border-bottom: 1px solid #f0f0f0; /* Adds a subtle separator between fields */
 }
 
-/* NEW: Style the title cell as a header for the card */
-.docs-content td.cell-title {
-    display: block;
-    text-align: left;
-    font-size: 1.1em;
-    font-weight: var(--table-header-font-weight);
-    background-color: #F8F9FA;
-    padding: 12px 15px;
-    border-bottom: 1px solid var(--table-border-color);
-}
-
-/* NEW: Hide the "Title:" label from the title cell as it's redundant */
-.docs-content td.cell-title::before {
-    display: none;
+.docs-content tr td:last-child {
+    border-bottom: none;
 }
 
 
-/* The magic: The data-label attribute becomes a visible label */
+/* The magic: The data-label attribute becomes a visible label for every cell */
 .docs-content td::before {
     content: attr(data-label);
     font-weight: var(--table-header-font-weight);
@@ -126,13 +126,6 @@
         /* Re-introduce the cell borders for the desktop view */
         border-bottom: 1px solid var(--table-border-color);
         border-right: 1px solid var(--table-border-color);
-    }
-    
-    /* NEW: Reset the special title cell styling for desktop view */
-    .docs-content td.cell-title {
-        font-size: 14px;
-        font-weight: 300;
-        background-color: transparent;
     }
 
     /* Remove borders where they aren't needed */
