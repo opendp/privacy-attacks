@@ -1,3 +1,4 @@
+/* --- 1. General Variables & Container --- */
 :root {
     --table-border-color: #E7E7E7;
     --table-border-radius: 8px;
@@ -57,6 +58,23 @@
     border: none;
 }
 
+/* NEW: Style the title cell as a header for the card */
+.docs-content td.cell-title {
+    display: block;
+    text-align: left;
+    font-size: 1.1em;
+    font-weight: var(--table-header-font-weight);
+    background-color: #F8F9FA;
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--table-border-color);
+}
+
+/* NEW: Hide the "Title:" label from the title cell as it's redundant */
+.docs-content td.cell-title::before {
+    display: none;
+}
+
+
 /* The magic: The data-label attribute becomes a visible label */
 .docs-content td::before {
     content: attr(data-label);
@@ -81,7 +99,8 @@
 }
 
 /* --- 4. Desktop Table Styles (Via Media Query) --- */
-@media (min-width: 768px) {
+/* UPDATED: Using `em` units makes the breakpoint responsive to user font-size changes. 768px / 16px = 48em. */
+@media (min-width: 48em) {
     /* Revert to a traditional table layout */
     .docs-content table {
         border-collapse: separate; /* Required for border-radius on corners */
@@ -107,6 +126,13 @@
         /* Re-introduce the cell borders for the desktop view */
         border-bottom: 1px solid var(--table-border-color);
         border-right: 1px solid var(--table-border-color);
+    }
+    
+    /* NEW: Reset the special title cell styling for desktop view */
+    .docs-content td.cell-title {
+        font-size: 14px;
+        font-weight: 300;
+        background-color: transparent;
     }
 
     /* Remove borders where they aren't needed */
@@ -134,3 +160,4 @@
     .docs-content table tr:first-child th:last-child { border-top-right-radius: var(--table-border-radius); }
     /* Note: Bottom radius is handled by the container */
 }
+
