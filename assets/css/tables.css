@@ -67,11 +67,22 @@
     font-weight: 300;
     /* Reset borders from original CSS */
     border: none;
-    border-bottom: 1px solid #f0f0f0; /* Adds a subtle separator between fields */
 }
 
-.docs-content tr td:last-child {
-    border-bottom: none;
+/* NEW: Style the title cell as a header for the card */
+.docs-content td.cell-title {
+    display: block;
+    text-align: left;
+    font-size: 1.1em;
+    font-weight: var(--table-header-font-weight);
+    background-color: #F8F9FA;
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--table-border-color); /* A separator after the header */
+}
+
+/* NEW: Hide the "Title:" label from the title cell as it's redundant */
+.docs-content td.cell-title::before {
+    display: none;
 }
 
 
@@ -99,7 +110,7 @@
 }
 
 /* --- 4. Desktop Table Styles (Via Media Query) --- */
-/* UPDATED: Using `em` units makes the breakpoint responsive to user font-size changes. 768px / 16px = 48em. */
+/* Using `em` units makes the breakpoint responsive to user font-size changes. 768px / 16px = 48em. */
 @media (min-width: 48em) {
     /* Revert to a traditional table layout */
     .docs-content table {
@@ -126,6 +137,13 @@
         /* Re-introduce the cell borders for the desktop view */
         border-bottom: 1px solid var(--table-border-color);
         border-right: 1px solid var(--table-border-color);
+    }
+    
+    /* NEW: Reset the special title cell styling for desktop view */
+    .docs-content td.cell-title {
+        font-size: 14px;
+        font-weight: 300;
+        background-color: transparent;
     }
 
     /* Remove borders where they aren't needed */
