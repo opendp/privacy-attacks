@@ -9,7 +9,6 @@
 */
 
 /* --- 1. General Variables & Container --- */
-/* We'll use some of your original styling for consistency. */
 :root {
     --table-border-color: #E7E7E7;
     --table-border-radius: 8px;
@@ -85,6 +84,33 @@
     display: none;
 }
 
+
+/* --- 5. Table Search UI & Hooks --- */
+/* Container (optional) placed above tables to hold a search input */
+.docs-content .table-search {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 12px 0;
+    gap: 8px;
+}
+
+/* Utility: hide rows when filtered out (works for mobile block rows and desktop table rows) */
+.docs-content .row-hidden {
+    display: none !important;
+}
+
+/* Optional: subtle highlight for rows that match a search */
+.docs-content .row-highlight {
+    background-color: #FFFBEA; /* very light highlight */
+}
+
+/* Optional: style for a single full-width "no results" row */
+.docs-content tr.no-results td {
+    text-align: center;
+    color: #5F5F5F;
+    font-style: italic;
+}
 
 /* The magic: The data-label attribute becomes a visible label for every cell */
 .docs-content td::before {
