@@ -6,6 +6,23 @@ class: deployments-registry
 permalink: /how_to_use_the_repository/
 ---
 
+## How to Use the Repository
+
+Each row in the [repository spreadsheet](https://docs.google.com/spreadsheets/d/1yG-B58i29vz0xp-yKjFPy1yj6fchGfp4keASS-zXdq8/edit#gid=0) corresponds to a published research paper describing an *output privacy attack*.  
+Before diving into the column definitions, it is helpful to begin with a concrete example.
+
+---
+
+#### Example Entry
+
+| **Title** | **Authors** | **Year** | **Data Type (Inputs)** | **Type of Data Release (Outputs)** | **Attacker Objectives** | **Research Type** |
+|------------|-------------|----------|-------------------------|------------------------------------|--------------------------|------------------|
+| *The 2010 Census Confidentiality Protections Failed, Here's How and Why* | <details><summary>John M. Abowd _et al._</summary>John M. Abowd, Tamara Adams, Robert Ashmead, David Darais, Sourya Dey, Simson L. Garfinkel, Nathan Goldschlag, Daniel Kifer, Philip Leclerc, Ethan Lew, Scott Moore, Rolando A. Rodríguez, Ramy N. Tadros, Lars Vilhuber</details> | 2023 | Tabular | Linear Queries | Reconstruction | Empirical |
+
+This example illustrates how each paper is cataloged according to the **data type**, **release type**, **attacker objective**, and other metadata that enable cross-comparison and filtering across the literature.
+
+---
+
 ## How to use the repository
 
 The information associated with each paper follows the format:
