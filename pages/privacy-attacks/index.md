@@ -7,7 +7,7 @@ permalink: /privacy-attacks/
 ---
 
 <div class="home-page privacy-attacks-page">
-<div class="main-content" markdown="1">
+<div class="main-content" markdown="0">
 
 {% assign attacks = site.data.attacks | default: site.data.privacy_attacks | default: site.data %}
 
