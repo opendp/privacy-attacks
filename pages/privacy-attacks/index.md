@@ -26,7 +26,9 @@ permalink: /privacy-attacks/
 <script>
 </script>
 <script type="module" src="{{ '/assets/js/download-tsv.js' | relative_url }}"></script>
+<script type="module" src="{{ '/assets/js/filter-attacks.js' | relative_url }}"></script>
 
+<div class="filters-container">
 <!-- Filters Section -->
 <div class="filters-container">
     <div style="white-space: nowrap">Privacy Attacks</div>
