@@ -430,22 +430,14 @@ document.addEventListener('DOMContentLoaded', function() {
         return function(deployment) {
             // Search in various fields
             const searchableFields = [
-                deployment.data_curator,
-                deployment.data_product_type,
-                deployment.dp_flavor?.name,
-                deployment.model?.model_name,
-                deployment.privacy_loss?.privacy_unit,
-                deployment.privacy_loss?.privacy_parameters?.epsilon,
-                deployment.privacy_loss?.privacy_parameters?.delta,
-                deployment.privacy_loss?.privacy_parameters?.rho,
-                deployment.publication_date
+                deployment.title,             // <-- ADD YOUR TITLE FIELD HERE
+                deployment.authors,           // <-- ADD YOUR AUTHORS FIELD HERE
             ];
             
             return searchableFields.some(field => 
                 field && field.toString().toLowerCase().includes(searchTerm)
             );
         };
-    }
     
     // Populate filter options
     function populateFilters() {
