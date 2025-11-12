@@ -20,16 +20,9 @@ permalink: /privacy-attacks/
 </header>
 {% endif %}
 
-<button>
-    <a download="privacy-attacks.tsv" id="download-tsv">Download TSV</a>
-</button>
-<script>
-</script>
 <script type="module" src="{{ '/assets/js/download-tsv.js' | relative_url }}"></script>
 <script type="module" src="{{ '/assets/js/filter-attacks.js' | relative_url }}"></script>
 
-<div class="filters-container">
-<!-- Filters Section -->
 <div class="filters-container">
     <div style="white-space: nowrap">Privacy Attacks</div>
     <div class="filter-row" style="justify-content: right">
@@ -42,6 +35,9 @@ permalink: /privacy-attacks/
             </select>
         </div>
         <div class="filter-actions">
+            <button>
+                <a download="privacy-attacks.tsv" id="download-tsv">Download TSV</a>
+            </button>
             <button id="clear-filters" title="Clear all filters">Clear</button>
         </div>
     </div>
@@ -153,4 +149,4 @@ permalink: /privacy-attacks/
 </div>
 </div>
 
-{% include attack-filter-script.html %} 
+{% include attack-filter-script.html %}
