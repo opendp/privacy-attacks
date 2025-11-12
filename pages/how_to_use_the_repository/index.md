@@ -59,8 +59,8 @@ Columns A--D and J--M we believe are fairly standard.  Columns F--I are more str
 
 
 * ***Predictive Model.***  Predictive models map input features to target outputs and are trained on labeled data. They are typically used to predict unknown or future values based on historical data. Examples include:  
-  * **Simple Predictive Models (e.g., Linear Regression):**   
-    * **Neural Networks (Deep Learning Models)**: 
+  * **Simple Predictive Models** (e.g., Linear or Logistic Regression):  
+    * **Neural Networks** (e.g., Deep Learning Models):
 
 * ***Generative Models.***  Produce new synthetic data points (e.g., text, images, audio) that resemble the training data distribution. LLMs (e.g., GPT), diffusion models for images (e.g., Stable Diffusion), and generative adversarial networks (GANs) are typical examples.
 
