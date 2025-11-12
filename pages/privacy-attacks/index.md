@@ -23,9 +23,15 @@ permalink: /privacy-attacks/
 <script type="module" src="{{ '/assets/js/download-tsv.js' | relative_url }}"></script>
 <script type="module" src="{{ '/assets/js/filter-attacks.js' | relative_url }}"></script>
 
-<div class="filters-container">
-    <div style="white-space: nowrap">Privacy Attacks</div>
-    <div class="filter-row" style="justify-content: right">
+<div class="filters-container" style="display: flex; justify-content: space-between; align-items: center;">
+    
+    <div class="filter-actions">
+        <button>
+            <a download="privacy-attacks.tsv" id="download-tsv">Download TSV</a>
+        </button>
+    </div>
+
+    <div class="filter-row" style="display: flex; align-items: center; gap: 0.5rem;">
         <div class="filter-group">
             <input type="text" id="search-filter" placeholder="Search">
         </div>
@@ -35,9 +41,6 @@ permalink: /privacy-attacks/
             </select>
         </div>
         <div class="filter-actions">
-            <button>
-                <a download="privacy-attacks.tsv" id="download-tsv">Download TSV</a>
-            </button>
             <button id="clear-filters" title="Clear all filters">Clear</button>
         </div>
     </div>
