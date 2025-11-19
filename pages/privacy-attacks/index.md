@@ -145,4 +145,3 @@ permalink: /privacy-attacks/
 {% include attack-filter-script.html %}
 <script type="module" src="{{ '/assets/js/sort-table.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/expand-text.js' | relative_url }}"></script>
-
