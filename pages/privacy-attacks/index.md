@@ -1,43 +1,35 @@
 ---
 layout: main
 title: Privacy Attacks Repository
+icon: fa-table
 order: 1
 class: privacy-attacks
 permalink: /privacy-attacks/
 ---
 
 <div class="home-page privacy-attacks-page">
-<div class="main-content" markdown="1">
+<div class="main-content" markdown="0">
 
 {% assign attacks = site.data.attacks | default: site.data.privacy_attacks | default: site.data %}
 
-{% if page.icon %}
-    <i class="fa-solid fa-2xl {{ page.icon }} page-icon"></i>
-{% endif %}
-{% if page.title %}
-<header>
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-</header>
-{% endif %}
 
-<button>
-    <a download="privacy-attacks.tsv" id="download-tsv">Download TSV</a>
-</button>
 <script>
 </script>
 <script type="module" src="{{ '/assets/js/download-tsv.js' | relative_url }}"></script>
 
 <!-- Filters Section -->
 <div class="filters-container">
-    <div style="white-space: nowrap">Privacy Attacks</div>
+    <div style="white-space: nowrap">
+        <button>
+            <a download="privacy-attacks.tsv" id="download-tsv">Download TSV</a>
+        </button>
+    </div>
     <div class="filter-row" style="justify-content: right">
         <div class="filter-group">
             <input type="text" id="search-filter" placeholder="Search">
         </div>
         <div class="filter-group">
-            <select id="visible-filters">
-                <option value="">Filters</option>
-            </select>
+            <button id="filters-button">Filters</button>
         </div>
         <div class="filter-actions">
             <button id="clear-filters" title="Clear all filters">Clear</button>
@@ -45,36 +37,31 @@ permalink: /privacy-attacks/
     </div>
 </div>
 
-<div class="filters-container" style="margin-top: 0.5rem">
+<div id="filters-dropdown" class="filters-container" style="display: none; margin-top: 0.5rem">
     <div class="filter-row">
-        <div class="filter-group" id="datatype-filter-group" style="display: none;">
-            <label for="datatype-filter">Data Type (Inputs):</label>
+        <div class="filter-group" id="datatype-filter-group">
             <select id="datatype-filter">
-                <option value="">All Data Types</option>
+                <option value="">Data Type (Inputs)</option>
             </select>
         </div>
-        <div class="filter-group" id="release-filter-group" style="display: none;">
-            <label for="release-filter">Type of Data Release (Outputs):</label>
+        <div class="filter-group" id="release-filter-group">
             <select id="release-filter">
-                <option value="">All Release Types</option>
+                <option value="">Type of Data Release (Outputs)</option>
             </select>
         </div>
-        <div class="filter-group" id="objective-filter-group" style="display: none;">
-            <label for="objective-filter">Attacker Objectives:</label>
+        <div class="filter-group" id="objective-filter-group">
             <select id="objective-filter">
-                <option value="">All Objectives</option>
+                <option value="">Attacker Objectives</option>
             </select>
         </div>
-        <div class="filter-group" id="researchtype-filter-group" style="display: none;">
-            <label for="researchtype-filter">Research Type:</label>
+        <div class="filter-group" id="researchtype-filter-group">
             <select id="researchtype-filter">
-                <option value="">All Research Types</option>
+                <option value="">Research Type</option>
             </select>
         </div>
-        <div class="filter-group" id="year-filter-group" style="display: none;">
-            <label for="year-filter">Year:</label>
+        <div class="filter-group" id="year-filter-group">
             <select id="year-filter">
-                <option value="">All Years</option>
+                <option value="">Year</option>
             </select>
         </div>
     </div>
@@ -102,7 +89,11 @@ permalink: /privacy-attacks/
         {% assign a = rec[1] | default: rec %}
         <tr class="attack-row" data-index="{{ forloop.index0 }}">
             <td><div style="color: #181818; font-weight: 500; margin-bottom: 4px">{{ a.Title }}</div></td>
-            <td>{{ a.Authors }}</td>
+            <td class="attack-authors">
+                {% if a.Authors %}
+                <div class="expandable-authors">{{ a.Authors }}</div>
+                {% endif %}
+            </td>
             <td class="year-cell">{{ a["Publication Year"] }}</td>
             <td>{{ a["Data Type"] }}</td>
             <td>{{ a["Type of Release"] }}</td>
@@ -151,4 +142,7 @@ permalink: /privacy-attacks/
 </div>
 </div>
 
-{% include attack-filter-script.html %} 
+{% include attack-filter-script.html %}
+<script type="module" src="{{ '/assets/js/sort-table.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/expand-text.js' | relative_url }}"></script>
+

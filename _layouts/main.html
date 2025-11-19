@@ -36,6 +36,16 @@
             
             <div class="docs-content">
                 <article class="post">
+                    <header class="post-header" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        {% if page.icon %}
+                            <i class="fa-solid fa-2xl {{ page.icon }} page-icon" style="margin-bottom: 0; margin-right: 0;"></i>
+                        {% endif %}
+                        {% if page.title %}
+                            <h1 class="post-title" style="margin-bottom: 0;">
+                                {{ page.title | escape }}
+                            </h1>
+                        {% endif %}
+                    </header>
                     <div class="post-content">
                         {{ content }}
                     </div>
@@ -46,7 +56,6 @@
 
     {%- include footer.html -%}
 
-    {%- include sidebar-script.html -%}
 
   </body>
 

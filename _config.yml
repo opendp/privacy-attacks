@@ -27,8 +27,12 @@ include:
 header_pages:
   - pages/index.md
 
-markdown: kramdown # The default: passes <script> tags through verbatim.
-
+markdown: kramdown
+kramdown:
+  input: GFM
+  parse_block_html: true
+  hard_wrap: false
+  
 # Defaults for pages
 defaults:
   - scope:

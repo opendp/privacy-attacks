@@ -12,7 +12,7 @@ This document serves as a guide for understanding and using the [repository](htt
 * the adversarial threat model employed
 * the success metrics used to evaluate the effectiveness of these attacks
 
-See the page on [How to use the repository](/how-to-use-the-repository) for detailed instructions and an overview of the rationale behind its design.
+See the page on [How to use the repository](https://opendp.github.io/privacy-attacks/how_to_use_the_repository/) for detailed instructions and an overview of the rationale behind its design.
 
 **NOTE**: This repository is a living resource. We aim to keep it up to date, but relevant work may occasionally be missing. If you notice an omission, we welcome your contributions to help improve and expand this collection.
 

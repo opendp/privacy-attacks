@@ -1,14 +1,13 @@
 ---
 layout: main
 title: How to use the attacks repository
+icon: fa-book
 order: 1
 class: deployments-registry
 permalink: /how_to_use_the_repository/
 ---
 
-## How to Use the Repository
-
-Each row in the [repository spreadsheet](https://docs.google.com/spreadsheets/d/1yG-B58i29vz0xp-yKjFPy1yj6fchGfp4keASS-zXdq8/edit#gid=0) corresponds to a published research paper describing an *output privacy attack*.  
+Each row in the repository corresponds to a published research paper describing an *output privacy attack*.  
 Before diving into the column definitions, it is helpful to begin with a concrete example.
 
 ---
@@ -59,8 +58,8 @@ Columns A--D and J--M we believe are fairly standard.  Columns F--I are more str
 
 
 * ***Predictive Model.***  Predictive models map input features to target outputs and are trained on labeled data. They are typically used to predict unknown or future values based on historical data. Examples include:  
-  * **Simple Predictive Models (e.g., Linear Regression):**   
-    * **Neural Networks (Deep Learning Models)**: 
+  * **Simple Predictive Models** (e.g., Linear or Logistic Regression):  
+    * **Neural Networks** (e.g., Deep Learning Models):
 
 * ***Generative Models.***  Produce new synthetic data points (e.g., text, images, audio) that resemble the training data distribution. LLMs (e.g., GPT), diffusion models for images (e.g., Stable Diffusion), and generative adversarial networks (GANs) are typical examples.
 
