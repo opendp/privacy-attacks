@@ -7,7 +7,7 @@ icon: 'fa-house'
 
 ### Overview
 
-This document serves as a guide for understanding and using the [repository](https://docs.google.com/spreadsheets/d/1yG-B58i29vz0xp-yKjFPy1yj6fchGfp4keASS-zXdq8/edit#gid=0) on output privacy attacks and auditing. The repository is designed to be an open resource for the community, cataloging a wide range of scientific papers that explore various output privacy attacks. The repository classifies papers according to various dimensions such as:
+This document serves as a guide for understanding and using the [repository](https://opendp.github.io/privacy-attacks/privacy-attacks/) on output privacy attacks and auditing. The repository is designed to be an open resource for the community, cataloging a wide range of scientific papers that explore various output privacy attacks. The repository classifies papers according to various dimensions such as:
 * the type of data targeted
 * the adversarial threat model employed
 * the success metrics used to evaluate the effectiveness of these attacks
