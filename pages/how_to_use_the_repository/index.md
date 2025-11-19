@@ -101,7 +101,6 @@ Columns A--D and J--M we believe are fairly standard.  Columns F--I are more str
 
 * ***Generative Models.***  Produce new synthetic data points (e.g., text, images, audio) that resemble the training data distribution. LLMs (e.g., GPT), diffusion models for images (e.g., Stable Diffusion), and generative adversarial networks (GANs) are typical examples.
 
-Typically tabular datasets are analyzed using either...
 
 **Threat Model \--- Attacker Objectives.**  Describes what constitutes “success” for the attacker, typically by specifying some piece of  information that is unknown to the attacker and a criteria for recovering that information sufficiently well.  While there are some variations in how each attacker objective is defined, and sometimes different threat models can blur together at the boundaries, we can describe the basic categories of threat model.
 
@@ -113,10 +112,4 @@ Typically tabular datasets are analyzed using either...
 
 ***Attribute Inference.*** In an attribute inference attack, the attacker uses the data release to infer global properties of sensitive attributes in the dataset. As described in this paper introducing attribute privacy, these global properties pertain to the dataset itself or the underlying distribution from which the dataset is sampled, rather than to individuals in the dataset.  In the first case, for example, a hospital may wish to protect the incidence of a disease in its patients,, even if the prevalence of that disease in the broader population is public information. In the second case, a pharmaceutical company may want to protect its experimental findings about the effect of a new drug on the population. However, other papers consider individual-level attribute inferences, separating sensitive from non-sensitive attributes. This paper provides a nice overview of different definitions related to attribute inference.
 
-**Threat Model \--- Attacker Capabilities.**  This column describes the particular capabilities that we assume the attacker needs to run the attack successfully.  These capabilities often take the form of some kind of background knowledge about any or all of (1) the distribution the data was drawn from as well as the specific dataset, and (2) the particulars of the algorithm releasing the release and how the attacker can interact with that release.  Some examples include:
-
-* Issue adaptive queries to the privacy mechanism   
-* Insert poisoned examples to the training data  
-* …
-
-This information is much less structured, and often the ways research papers differ in attacker capabilities is highly specific to the data type, release type, and attacker objective.  As a result, we left the column free-text.   
+**Threat Model \--- Attacker Capabilities.**  This column describes the particular capabilities that we assume the attacker needs to run the attack successfully.  These capabilities often take the form of some kind of background knowledge about any or all of (1) the distribution the data was drawn from as well as the specific dataset, and (2) the particulars of the algorithm releasing the release and how the attacker can interact with that release.  Some examples include issuing adaptive queries to the privacy mechanism, or inserting poisoned examples to the training data. This information is much less structured, and often the ways research papers differ in attacker capabilities is highly specific to the data type, release type, and attacker objective. As a result, we left the column free-text.   
