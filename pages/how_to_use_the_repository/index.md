@@ -7,26 +7,56 @@ class: deployments-registry
 permalink: /how_to_use_the_repository/
 ---
 
-Each row in the repository corresponds to a published research paper describing an *output privacy attack*.  
-Before diving into the column definitions, it is helpful to begin with a concrete example.
+Each row in this repository corresponds to a research paper that describes an *output privacy attack*. Before diving into the column definitions, it is helpful to begin with a concrete example.
 
 ---
 
 #### Example Entry
 
-| **Title** | **Authors** | **Year** | **Data Type (Inputs)** | **Type of Data Release (Outputs)** | **Attacker Objectives** | **Research Type** |
-|------------|-------------|----------|-------------------------|------------------------------------|--------------------------|------------------|
-| *The 2010 Census Confidentiality Protections Failed, Here's How and Why* | <details><summary>John M. Abowd _et al._</summary>John M. Abowd, Tamara Adams, Robert Ashmead, David Darais, Sourya Dey, Simson L. Garfinkel, Nathan Goldschlag, Daniel Kifer, Philip Leclerc, Ethan Lew, Scott Moore, Rolando A. Rodríguez, Ramy N. Tadros, Lars Vilhuber</details> | 2023 | Tabular | Linear Queries | Reconstruction | Empirical |
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Authors</th>
+      <th>Year</th>
+      <th>Data Type (Inputs)</th>
+      <th>Type of Data Release (Outputs)</th>
+      <th>Attacker Objectives</th>
+      <th>Research Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>The 2010 Census Confidentiality Protections Failed, Here's How and Why</em></td>
+      <td>
+        <details>
+          <summary>John M. Abowd <em>et al.</em></summary>
+          John M. Abowd, Tamara Adams, Robert Ashmead, David Darais, Sourya Dey,
+          Simson L. Garfinkel, Nathan Goldschlag, Daniel Kifer, Philip Leclerc,
+          Ethan Lew, Scott Moore, Rolando A. Rodríguez, Ramy N. Tadros,
+          Lars Vilhuber
+        </details>
+      </td>
+      <td>2023</td>
+      <td>Tabular</td>
+      <td>Linear Queries</td>
+      <td>Reconstruction</td>
+      <td>Empirical</td>
+    </tr>
+  </tbody>
+</table>
 
-This example illustrates how each paper is cataloged according to the **data type**, **release type**, **attacker objective**, and other metadata that enable cross-comparison and filtering across the literature.
+This example illustrates how each paper is cataloged according to the **data type**, **release type**, **attacker objective**, and other metadata that enable cross-comparison and filtering across the literature. You can use the repository’s built-in **search and filter** tools to quickly locate papers relevant to your interests.
 
-#### Filtering for Relevant Research Papers
+For example, to find empirical attacks on **generative image models**, you might:
 
-You can use the repository's search and filter tools to quickly locate specific research papers relevant to your interests.
+1. Filter **Data Type (Inputs)** to `Image`.
+2. Filter **Type of Data Release (Outputs)** to `Generative Models`.
+3. Filter **Research Type** to `Empirical`.
 
-For example, you might want to search for empirical research papers on the release of generative image models. The figure below illustrates how to apply filters for the research type (e.g., "**Empirical**"), data type (e.g., "**Image**"), and the release type (e.g., "**Generative Models**") to obtain a focused list.
+The figure below shows an example of applying these filters to obtain a focused subset of the literature.
 
-![image](privacy-repo-screenshot.png)
+![Screenshot of repository filters applied to empirical attacks on generative image models.](privacy-repo-screenshot.png)
 
 ---
 
