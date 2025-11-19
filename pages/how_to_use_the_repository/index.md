@@ -20,11 +20,19 @@ Before diving into the column definitions, it is helpful to begin with a concret
 
 This example illustrates how each paper is cataloged according to the **data type**, **release type**, **attacker objective**, and other metadata that enable cross-comparison and filtering across the literature.
 
+#### Filtering for Relevant Research Papers
+
+You can use the repository's search and filter tools to quickly locate specific research papers relevant to your interests.
+
+For example, you might want to search for empirical research papers on the release of generative image models. The figure below illustrates how to apply filters for the research type (e.g., "**Empirical**"), data type (e.g., "**Image**"), and the release type (e.g., "**Generative Models**") to obtain a focused list.
+
+![image](privacy-repo-screenshot.png)
+
 ---
 
-## How to use the repository
+## Repository Structure
 
-The information associated with each paper follows the format:
+The information associated with each paper in the repository follows the format:
 - **A. URL**
 - **B. BibTeX entry**
 - **C. Authors**
