@@ -20,12 +20,4 @@ navigation:
       - path: /further-information/acknowledgements/
         title: Acknowledgements
         order: 2
-        
-  - section: privacy
-    title: Privacy
-    icon: 'fa-shield'
-    pages:
-      - path: /privacy/privacy-policy/
-        title: Privacy Policy
-        order: 1
 ---
