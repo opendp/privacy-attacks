@@ -88,18 +88,18 @@ permalink: /privacy-attacks/
     {% for rec in attacks %}
         {% assign a = rec[1] | default: rec %}
         <tr class="attack-row" data-index="{{ forloop.index0 }}">
-            <td><div style="color: #181818; font-weight: 500; margin-bottom: 4px">{{ a.Title }}</div></td>
-            <td class="attack-authors">
+            <td data-label="Title" class="cell-title"><div style="color: #181818; font-weight: 500; margin-bottom: 4px">{{ a.Title }}</div></td>
+            <td data-label="Authors" class="attack-authors">
                 {% if a.Authors %}
                 <div class="expandable-authors">{{ a.Authors }}</div>
                 {% endif %}
             </td>
-            <td class="year-cell">{{ a["Publication Year"] }}</td>
-            <td>{{ a["Data Type"] }}</td>
-            <td>{{ a["Type of Release"] }}</td>
-            <td>{{ a["Threat Model --- Attacker Objective"] }}</td>
-            <td>{{ a["Research Type"] }}</td>
-            <td class="bibtex-cell">
+            <td data-label="Year" class="year-cell">{{ a["Publication Year"] }}</td>
+            <td data-label="Data Type (Inputs)">{{ a["Data Type"] }}</td>
+            <td data-label="Type of Data Release (Outputs)">{{ a["Type of Release"] }}</td>
+            <td data-label="Attacker Objectives">{{ a["Threat Model --- Attacker Objective"] }}</td>
+            <td data-label="Research Type">{{ a["Research Type"] }}</td>
+            <td data-label="BibTeX" class="bibtex-cell">
                 {% assign bibtex_raw = a["BibTex (Please add a bibtex entry for this paper to facilitate easy citations)"] %}
                 {% capture bibtex_str %}{{ bibtex_raw }}{% endcapture %}
                 {% assign bibtex_str_down = bibtex_str | downcase %}
@@ -107,7 +107,7 @@ permalink: /privacy-attacks/
                     <a href="data:text/plain;charset=utf-8,{{ bibtex_str | uri_escape }}" download="{{ a.Title | default: 'citation' | slugify }}.bib">Download</a>
                 {% endif %}
             </td>
-            <td class="code-cell">
+            <td data-label="Code" class="code-cell">
                 {% assign code_raw = a["Code"] | default: a["Links to Artifacts"] %}
                 {% capture code_str %}{{ code_raw | strip }}{% endcapture %}
                 {% assign code_str_down = code_str | downcase %}
@@ -115,8 +115,8 @@ permalink: /privacy-attacks/
                     <a href="{{ code_str }}" target="_blank">Code</a>
                 {% endif %}
             </td>
-            <td>{% if a.URL %}<a href="{{ a.URL }}" target="_blank">Paper</a>{% endif %}</td>
-            <td class="submitter-cell">
+            <td data-label="Links">{% if a.URL %}<a href="{{ a.URL }}" target="_blank">Paper</a>{% endif %}</td>
+            <td data-label="Submitter" class="submitter-cell">
                 {% assign submitter_raw = a["Submitter (your name, affiliation)"] %}
                 {% capture submitter_str %}{{ submitter_raw | strip }}{% endcapture %}
                 {% assign submitter_down = submitter_str | downcase %}
