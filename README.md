@@ -1,6 +1,6 @@
 # privacy-attacks-data
 
-This repository provides backing data for a repository of privacy attacks. It is intended to be an open resource for the community, cataloging scientific papers that explore various privacy attacks. The data classifies papers according to dimensions like the type of data, the adversarial threat model, and the attack's objectives.
+This repository provides backing data for a [repository of privacy attacks](https://attacks.opendp.org/). It is intended to be an open resource for the community, cataloging scientific papers that explore various privacy attacks. The data classifies papers according to dimensions like the type of data, the adversarial threat model, and the attack's objectives.
 
 This repo is intended to be referenced by a front-end which is responsible for display.
 
