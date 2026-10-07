@@ -1,4 +1,4 @@
-URL: https://files.sri.inf.ethz.ch/website/papers/sp21-dpsniper.pdf
+URL: https://doi.org/10.1109/SP40001.2021.00081
 BibTex (Please add a bibtex entry for this paper to facilitate easy citations): "@inproceedings{bichsel2021dp,\n\
   \    title={DP-Sniper: Black-Box Discovery of Differential Privacy Violations using\
   \ Classifiers},\n    author={Bichsel, Benjamin and Steffen, Samuel and Bogunovic,\
